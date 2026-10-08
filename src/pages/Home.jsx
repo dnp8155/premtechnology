@@ -5,6 +5,7 @@ import CoreExpertise from "@/components/home/CoreExpertise";
 import TransmissionFeature from "@/components/home/TransmissionFeature";
 import TemporaryWorks from "@/components/home/TemporaryWorks";
 import HeavyCivil from "@/components/home/HeavyCivil";
+import WorksGallery from "@/components/home/WorksGallery";
 import SelectedApplications from "@/components/home/SelectedApplications";
 import ApproachTimeline from "@/components/home/ApproachTimeline";
 import TechnicalCapabilities from "@/components/home/TechnicalCapabilities";
@@ -21,6 +22,7 @@ export default function Home() {
       <TransmissionFeature />
       <TemporaryWorks />
       <HeavyCivil />
+      <WorksGallery />
       <SelectedApplications />
       <ApproachTimeline />
       <TechnicalCapabilities />
