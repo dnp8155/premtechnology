@@ -12,22 +12,22 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <Link to="/" className="flex items-center gap-3 text-white" aria-label="Prem Technology Inc. — home">
               <Mark className="h-6 w-6" />
-              <span className="font-display text-[12.5px] font-semibold uppercase leading-none tracking-[0.16em]">
+              <span className="t-small font-display font-semibold leading-none tracking-[0.06em]">
                 {COMPANY.name}
               </span>
             </Link>
-            <p className="mt-7 max-w-sm text-[15px] leading-relaxed text-white/60">{COMPANY.tagline}</p>
-            <p className="label-mono mt-7 text-white/40">{COMPANY.markets}</p>
+            <p className="t-body mt-7 max-w-sm leading-relaxed text-white/70">{COMPANY.tagline}</p>
+            <p className="label-text mt-7 text-white/55">{COMPANY.markets}</p>
           </div>
 
           <nav aria-label="Footer" className="lg:col-span-3">
-            <h2 className="label-mono text-white/40">Navigation</h2>
+            <h2 className="label-mono text-white/55">Navigation</h2>
             <ul className="mt-6 space-y-3">
               {NAV.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-[15px] text-white/70 transition-colors hover:text-white"
+                    className="t-body text-white/70 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -37,8 +37,8 @@ export default function Footer() {
           </nav>
 
           <div className="lg:col-span-4">
-            <h2 className="label-mono text-white/40">Engagements</h2>
-            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/60">
+            <h2 className="label-mono text-white/55">Engagements</h2>
+            <p className="t-body mt-6 max-w-sm leading-relaxed text-white/70">
               Have a technically demanding structural or infrastructure requirement? Send us the scope and our
               engineering team will review the opportunity.
             </p>
@@ -50,14 +50,14 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-5 border-t border-white/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="label-mono text-white/40">
+          <p className="label-text text-white/55">
             © {new Date().getFullYear()} {COMPANY.legal}
           </p>
           <div className="flex items-center gap-7">
-            <Link to="/privacy" className="label-mono text-white/45 transition-colors hover:text-white">
+            <Link to="/privacy" className="label-mono text-white/55 transition-colors hover:text-white">
               Privacy
             </Link>
-            <Link to="/terms" className="label-mono text-white/45 transition-colors hover:text-white">
+            <Link to="/terms" className="label-mono text-white/55 transition-colors hover:text-white">
               Terms
             </Link>
           </div>

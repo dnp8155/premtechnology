@@ -12,12 +12,12 @@ export default function TemporaryWorks() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
           <Reveal className="lg:col-span-6">
             <SectionMeta index="04">Temporary &amp; Construction Works</SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2.1rem,5vw,3.9rem)] text-ink">
+            <h2 className="display t-h1 mt-7 text-ink">
               Engineered for the
               <br />
               construction sequence.
             </h2>
-            <p className="mt-7 max-w-xl text-[16px] leading-relaxed text-steel">
+            <p className="t-body mt-7 max-w-xl leading-relaxed text-steel">
               Temporary structures are critical to the safe and efficient execution of complex construction.
               Prem Technology supports shoring, formwork, falsework, scaffolding and excavation support with
               engineering focused on real construction conditions.
@@ -26,8 +26,8 @@ export default function TemporaryWorks() {
             <ul className="mt-10 border-t border-border sm:grid sm:grid-cols-2 sm:gap-x-8">
               {SCOPE.map((item, index) => (
                 <li key={item} className="flex items-baseline gap-4 border-b border-border py-4">
-                  <span className="label-mono text-steel/60">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="font-display text-[15px] uppercase tracking-[0.03em] text-ink">{item}</span>
+                  <span className="label-mono text-steel">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="t-h3 font-display tracking-[0.03em] text-ink">{item}</span>
                 </li>
               ))}
             </ul>
@@ -35,11 +35,11 @@ export default function TemporaryWorks() {
 
           <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
             <figure className="border border-border bg-background p-6 lg:p-8">
-              <figcaption className="label-mono mb-7 flex items-center justify-between gap-4 text-steel">
+              <figcaption className="label-text mb-7 flex items-center justify-between gap-4 text-steel">
                 <span>Fig. 01 — Shoring &amp; Excavation Support</span>
-                <span className="text-steel/60">Section</span>
+                <span>Section</span>
               </figcaption>
-              <ShoringDiagram className="h-auto w-full text-ink/80" />
+              <ShoringDiagram className="h-auto w-full text-ink" />
             </figure>
           </Reveal>
         </div>

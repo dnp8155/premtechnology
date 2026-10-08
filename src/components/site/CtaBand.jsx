@@ -17,10 +17,10 @@ export default function CtaBand({
       <div className="shell relative grid grid-cols-1 gap-10 py-20 lg:grid-cols-12 lg:py-28">
         <Reveal className="lg:col-span-7">
           <SectionMeta index="—">{eyebrow}</SectionMeta>
-          <h2 className="display mt-7 text-[clamp(2.2rem,5.6vw,4.6rem)] text-ink">{title}</h2>
+          <h2 className="display t-h1 mt-7 text-ink">{title}</h2>
         </Reveal>
         <Reveal className="lg:col-span-5 lg:pt-6" delay={0.1}>
-          <p className="max-w-md text-[16px] leading-relaxed text-steel">{copy}</p>
+          <p className="t-body max-w-md leading-relaxed text-steel">{copy}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to={primary.to} className="btn-solid-dark">
               {primary.label}

@@ -69,7 +69,7 @@
 
   body {
     @apply bg-background font-body text-foreground antialiased;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.65;
   }
 
@@ -99,12 +99,46 @@
 
   /* Technical metadata label */
   .label-mono {
-    @apply font-mono text-[11px] uppercase leading-none tracking-[0.16em];
+    @apply font-mono text-[12px] uppercase leading-none tracking-[0.14em];
+  }
+
+  /* Same step in sentence case — for labels longer than a couple of words */
+  .label-text {
+    @apply font-mono text-[12px] leading-none tracking-[0.04em];
   }
 
   /* Large architectural headline */
   .display {
-    @apply font-display font-semibold uppercase leading-[0.92] tracking-[-0.025em];
+    @apply font-display font-semibold leading-[0.98] tracking-[-0.025em];
+  }
+
+  /* Type scale — the seven steps used across the site */
+  .t-hero {
+    font-size: clamp(2.5rem, 7.4vw, 6.25rem);
+    line-height: 0.98;
+  }
+
+  .t-h1 {
+    font-size: clamp(2rem, 4.6vw, 3.75rem);
+    line-height: 1.02;
+  }
+
+  .t-h2 {
+    font-size: clamp(1.55rem, 2.9vw, 2.35rem);
+    line-height: 1.1;
+  }
+
+  .t-h3 {
+    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+    line-height: 1.25;
+  }
+
+  .t-body {
+    font-size: 1rem;
+  }
+
+  .t-small {
+    font-size: 0.8125rem;
   }
 
   /* Structural grid backgrounds */
@@ -125,7 +159,7 @@
   .btn-solid-light,
   .btn-outline-dark,
   .btn-outline-light {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-4 font-mono text-[11px] uppercase leading-none tracking-[0.16em];
+    @apply inline-flex items-center justify-center gap-2 px-6 py-4 font-mono text-[12px] leading-none tracking-[0.05em];
     background-repeat: no-repeat;
     background-size: 0% 100%;
     transition: background-size 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.35s ease,

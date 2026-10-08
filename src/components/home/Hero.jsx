@@ -37,7 +37,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="label-mono flex flex-wrap items-center gap-3 text-white/60"
+          className="label-text flex flex-wrap items-center gap-3 text-white/70"
         >
           <span>Prem Technology Inc.</span>
           <span aria-hidden="true" className="h-px w-8 bg-white/25" />
@@ -48,7 +48,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.08, ease: EASE }}
-          className="display mt-8 text-[clamp(2.6rem,8.2vw,7rem)] text-white"
+          className="display t-hero mt-8 text-white"
         >
           Engineering
           <br />
@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.16, ease: EASE }}
-          className="mt-9 max-w-2xl text-[16px] leading-relaxed text-white/70 lg:text-[18px]"
+          className="t-body mt-9 max-w-2xl leading-relaxed text-white/70"
         >
           Specialized structural engineering for transmission structures, temporary works, heavy civil
           infrastructure and technically demanding construction projects across Canada and the USA.
@@ -86,7 +86,7 @@ export default function Hero() {
           {META.map((item) => (
             <p
               key={item}
-              className="label-mono border-b border-white/10 py-5 pr-6 text-white/60 sm:border-b-0 sm:border-r sm:border-white/10 sm:last:border-r-0"
+              className="label-text border-b border-white/10 py-5 pr-6 text-white/70 sm:border-b-0 sm:border-r sm:border-white/10 sm:last:border-r-0"
             >
               {item}
             </p>

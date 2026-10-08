@@ -28,7 +28,7 @@ export default function Wordmark({ tone = "dark", className }) {
       <Mark className={tone === "light" ? "text-white" : "text-ink"} />
       <span
         className={cn(
-          "font-display text-[11px] font-semibold uppercase leading-none tracking-[0.16em] sm:text-[12.5px]",
+          "t-small font-display font-semibold leading-none tracking-[0.06em]",
           tone === "light" ? "text-white" : "text-ink"
         )}
       >

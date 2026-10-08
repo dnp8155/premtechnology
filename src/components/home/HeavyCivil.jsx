@@ -22,12 +22,12 @@ export default function HeavyCivil() {
           <SectionMeta index="05" tone="light">
             Heavy Civil &amp; Infrastructure
           </SectionMeta>
-          <h2 className="display mt-7 text-[clamp(2.1rem,5.6vw,4.4rem)] text-white">
+          <h2 className="display t-h1 mt-7 text-white">
             Engineering for
             <br />
             major infrastructure.
           </h2>
-          <p className="mt-8 max-w-2xl text-[16px] leading-relaxed text-white/70 lg:text-[17px]">
+          <p className="t-body mt-8 max-w-2xl leading-relaxed text-white/70">
             Supporting complex infrastructure projects with structural engineering expertise aligned with
             demanding construction environments.
           </p>
@@ -35,7 +35,7 @@ export default function HeavyCivil() {
 
         <div className="mt-16 grid grid-cols-2 border-t border-white/15 sm:grid-cols-4">
           {TAGS.map((tag) => (
-            <p key={tag} className="label-mono border-b border-white/10 py-5 text-white/60">
+            <p key={tag} className="label-text border-b border-white/10 py-5 text-white/70">
               {tag}
             </p>
           ))}

@@ -12,10 +12,10 @@ export default function TechnicalCapabilities() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <SectionMeta index="08">Capabilities</SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2rem,4vw,3.2rem)] text-ink">Technical capabilities.</h2>
+            <h2 className="display t-h1 mt-7 text-ink">Technical capabilities.</h2>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7 lg:pt-3">
-            <p className="max-w-lg text-[16px] leading-relaxed text-steel">
+            <p className="t-body max-w-lg leading-relaxed text-steel">
               A focused technical scope, delivered as part of project design, review and construction support.
             </p>
           </Reveal>
@@ -27,8 +27,8 @@ export default function TechnicalCapabilities() {
               key={capability}
               className="flex items-baseline gap-4 border-b border-r border-border px-6 py-7"
             >
-              <span className="label-mono text-steel/60">{String(index + 1).padStart(2, "0")}</span>
-              <span className="font-display text-[15px] uppercase leading-snug tracking-[0.03em] text-ink">
+              <span className="label-mono text-steel">{String(index + 1).padStart(2, "0")}</span>
+              <span className="t-h3 font-display leading-snug tracking-[0.03em] text-ink">
                 {capability}
               </span>
             </div>
@@ -38,8 +38,8 @@ export default function TechnicalCapabilities() {
             to="/contact"
             className="group flex items-center gap-4 border-b border-r border-border bg-ink px-6 py-7 text-white transition-colors duration-300 hover:bg-graphite"
           >
-            <span className="label-mono text-white/50">12</span>
-            <span className="font-display text-[15px] uppercase leading-snug tracking-[0.03em]">
+            <span className="label-mono text-white/55">12</span>
+            <span className="t-h3 font-display leading-snug tracking-[0.03em]">
               Discuss a specific scope
             </span>
             <ArrowUpRight

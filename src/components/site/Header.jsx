@@ -117,15 +117,15 @@ export default function Header() {
                   to={item.path}
                   className="group flex items-baseline justify-between border-b border-white/15 py-5 text-white"
                 >
-                  <span className="display text-[1.75rem]">{item.label}</span>
-                  <span className="label-mono text-white/40">{item.index}</span>
+                  <span className="display t-h2">{item.label}</span>
+                  <span className="label-mono text-white/55">{item.index}</span>
                 </NavLink>
               ))}
             </nav>
             <Link to="/contact" className="btn-solid-light mt-8 w-full">
               Discuss Your Project
             </Link>
-            <p className="label-mono mt-auto pt-10 text-white/40">Prem Technology Inc. — Canada / USA</p>
+            <p className="label-text mt-auto pt-10 text-white/55">Prem Technology Inc. — Canada / USA</p>
           </div>
         </div>
       ) : null}

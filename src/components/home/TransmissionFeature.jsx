@@ -22,12 +22,12 @@ export default function TransmissionFeature() {
             <SectionMeta index="03" tone="light">
               Transmission &amp; Power Structures
             </SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2.1rem,5vw,4rem)] text-white">
+            <h2 className="display t-h1 mt-7 text-white">
               Structures that
               <br />
               carry the grid.
             </h2>
-            <p className="mt-7 max-w-md text-[16px] leading-relaxed text-white/65">
+            <p className="t-body mt-7 max-w-md leading-relaxed text-white/70">
               Engineering support for transmission towers, lattice structures and power infrastructure where
               structural performance, loading conditions and constructability are critical.
             </p>
@@ -49,7 +49,7 @@ export default function TransmissionFeature() {
           {LABELS.map((label) => (
             <p
               key={label}
-              className="label-mono border-b border-white/10 py-6 pr-6 text-white/55 lg:border-b-0 lg:border-r lg:border-white/10 lg:last:border-r-0"
+              className="label-text border-b border-white/10 py-6 pr-6 text-white/70 lg:border-b-0 lg:border-r lg:border-white/10 lg:last:border-r-0"
             >
               {label}
             </p>

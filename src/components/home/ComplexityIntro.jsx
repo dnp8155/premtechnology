@@ -19,7 +19,7 @@ export default function ComplexityIntro() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-5">
             <SectionMeta index="01">Practice</SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2.2rem,5.4vw,4.2rem)] text-ink">
+            <h2 className="display t-h1 mt-7 text-ink">
               Built for
               <br />
               complexity.
@@ -27,11 +27,11 @@ export default function ComplexityIntro() {
           </Reveal>
 
           <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
-            <p className="text-[17px] leading-relaxed text-ink">
+            <p className="t-body leading-relaxed text-ink">
               Prem Technology Inc. provides specialized structural engineering support for projects where
               technical precision, constructability and reliability matter.
             </p>
-            <p className="mt-6 text-[16px] leading-relaxed text-steel">
+            <p className="t-body mt-6 leading-relaxed text-steel">
               We work across transmission and power structures, temporary and construction structures, and
               heavy civil infrastructure—supporting contractors, utilities, engineering teams and project
               owners through demanding stages of design, review and construction.
@@ -41,7 +41,7 @@ export default function ComplexityIntro() {
               {SPECS.map(([term, detail]) => (
                 <div key={term} className="border-t border-border pt-4">
                   <dt className="label-mono text-steel">{term}</dt>
-                  <dd className="mt-2 text-[15px] leading-relaxed text-ink">{detail}</dd>
+                  <dd className="t-body mt-2 leading-relaxed text-ink">{detail}</dd>
                 </div>
               ))}
             </dl>
@@ -61,7 +61,7 @@ export default function ComplexityIntro() {
           </Reveal>
 
           <Reveal delay={0.08} className="flex flex-col justify-between gap-10 lg:col-span-6 lg:col-start-7">
-            <p className="font-display text-[clamp(1.4rem,2.6vw,2.1rem)] font-medium leading-[1.25] tracking-[-0.02em] text-ink">
+            <p className="t-h2 font-display font-medium leading-[1.25] tracking-[-0.02em] text-ink">
               Complex projects are resolved in the details — load path, geometry, sequence and tolerance.
               Our work sits at exactly that level.
             </p>
@@ -72,8 +72,8 @@ export default function ComplexityIntro() {
                 "Documentation prepared for review, fabrication and construction",
               ].map((item, index) => (
                 <li key={item} className="flex items-baseline gap-5 border-b border-border py-5">
-                  <span className="label-mono text-steel/70">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="text-[15px] leading-relaxed text-steel">{item}</span>
+                  <span className="label-mono text-steel">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="t-body leading-relaxed text-steel">{item}</span>
                 </li>
               ))}
             </ul>

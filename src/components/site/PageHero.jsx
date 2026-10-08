@@ -31,13 +31,13 @@ export default function PageHero({ index, eyebrow, title, copy, image, imageAlt,
         <SectionMeta index={index} tone="light">
           {eyebrow}
         </SectionMeta>
-        <h1 className="display mt-7 max-w-[19ch] text-[clamp(2.4rem,6.4vw,5.2rem)] text-white">{title}</h1>
-        {copy ? <p className="mt-7 max-w-2xl text-[16px] leading-relaxed text-white/70 lg:text-[17px]">{copy}</p> : null}
+        <h1 className="display t-hero mt-7 max-w-[19ch] text-white">{title}</h1>
+        {copy ? <p className="t-body mt-7 max-w-2xl leading-relaxed text-white/70">{copy}</p> : null}
 
         {tags.length ? (
           <div className="mt-12 grid grid-cols-2 border-t border-white/15 sm:grid-cols-3 lg:grid-cols-4">
             {tags.map((tag) => (
-              <div key={tag} className="label-mono border-b border-white/10 py-5 pr-6 text-white/55 lg:border-b-0">
+              <div key={tag} className="label-text border-b border-white/10 py-5 pr-6 text-white/70 lg:border-b-0">
                 {tag}
               </div>
             ))}

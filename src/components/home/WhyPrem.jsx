@@ -35,7 +35,7 @@ export default function WhyPrem() {
             <SectionMeta index="09" tone="light">
               Why Prem Technology
             </SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2.1rem,5vw,4rem)] text-white">
+            <h2 className="display t-h1 mt-7 text-white">
               Precision where
               <br />
               complexity demands it.
@@ -50,12 +50,12 @@ export default function WhyPrem() {
                 className="border-t border-white/15 py-7 first:border-t-0 first:pt-0 last:pb-0"
               >
                 <div className="flex gap-5">
-                  <span className="label-mono mt-1.5 text-white/40">{item.index}</span>
+                  <span className="label-mono mt-1.5 text-white/55">{item.index}</span>
                   <div>
-                    <h3 className="font-display text-[17px] uppercase tracking-[0.03em] text-white">
+                    <h3 className="t-h3 font-display tracking-[0.03em] text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/60">{item.copy}</p>
+                    <p className="t-body mt-3 max-w-xl leading-relaxed text-white/70">{item.copy}</p>
                   </div>
                 </div>
               </Reveal>

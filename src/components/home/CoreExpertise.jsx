@@ -91,15 +91,15 @@ function AreaRow({ area, alternate }) {
         >
           <div className="flex items-baseline gap-5">
             <span className="label-mono text-brand">{area.index}</span>
-            <h3 className="display text-[clamp(1.5rem,3.1vw,2.4rem)] text-ink">{area.title}</h3>
+            <h3 className="display t-h2 text-ink">{area.title}</h3>
           </div>
-          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-steel">{area.summary}</p>
+          <p className="t-body mt-5 max-w-xl leading-relaxed text-steel">{area.summary}</p>
 
           <ul className="mt-9 grid grid-cols-1 border-t border-border sm:grid-cols-2 sm:gap-x-8">
             {area.items.map((item, index) => (
               <li key={item} className="flex items-baseline gap-4 border-b border-border py-3">
-                <span className="label-mono text-steel/60">{String(index + 1).padStart(2, "0")}</span>
-                <span className="text-[15px] text-ink">{item}</span>
+                <span className="label-mono text-steel">{String(index + 1).padStart(2, "0")}</span>
+                <span className="t-body text-ink">{item}</span>
               </li>
             ))}
           </ul>
@@ -116,9 +116,9 @@ export default function CoreExpertise() {
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <SectionMeta index="02">Core Expertise</SectionMeta>
-            <h2 className="display mt-7 text-[clamp(2.2rem,5.4vw,4.2rem)] text-ink">Our core expertise.</h2>
+            <h2 className="display t-h1 mt-7 text-ink">Our core expertise.</h2>
           </div>
-          <p className="max-w-sm text-[15px] leading-relaxed text-steel lg:text-right">
+          <p className="t-body max-w-sm leading-relaxed text-steel lg:text-right">
             Three specialisms, delivered together where a project requires structural, temporary works and
             infrastructure engineering in one coordinated scope.
           </p>

@@ -6,8 +6,8 @@ export default function SectionMeta({ index, children, tone = "dark", className 
   return (
     <div
       className={cn(
-        "label-mono flex items-center gap-3",
-        light ? "text-white/55" : "text-steel",
+        "label-text flex items-center gap-3",
+        light ? "text-white/70" : "text-steel",
         className
       )}
     >
