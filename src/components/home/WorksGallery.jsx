@@ -48,22 +48,24 @@ export default function WorksGallery() {
                     alt={item.alt}
                     fittingType="fill"
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.05]"
+                    className="h-full w-full object-cover grayscale brightness-[0.82] transition-all duration-1000 ease-out group-hover:scale-[1.05] group-hover:grayscale-0 group-hover:brightness-100"
                   />
                 </div>
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/35"
+                  className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-ink/10"
                   aria-hidden="true"
                 />
                 <div className="absolute inset-0 flex flex-col justify-between p-5 lg:p-6">
                   <div className="flex items-center justify-between">
                     <span className="label-mono text-white/70">{item.index}</span>
-                    <span className="text-white/0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white/80">
-                      <ArrowUpRight size={18} aria-hidden="true" />
-                    </span>
+                    <ArrowUpRight
+                      size={18}
+                      aria-hidden="true"
+                      className="text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white"
+                    />
                   </div>
                   <div>
-                    <p className="label-text text-white/70">{item.category}</p>
+                    <p className="label-mono text-white/65">{item.category}</p>
                     <h3 className="display t-h3 mt-2 text-white">{item.title}</h3>
                   </div>
                 </div>
