@@ -21,6 +21,8 @@ export default function Hero() {
         src={IMG.heroCover}
         alt="Steel lattice transmission tower rising against an overcast sky"
         fittingType="fill"
+        loading="eager"
+        fetchpriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/55 to-ink/95" aria-hidden="true" />

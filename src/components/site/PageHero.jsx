@@ -12,6 +12,8 @@ export default function PageHero({ index, eyebrow, title, copy, image, imageAlt,
             src={image}
             alt={imageAlt || ""}
             fittingType="fill"
+            loading="eager"
+            fetchpriority="high"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/60" aria-hidden="true" />

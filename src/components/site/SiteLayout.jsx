@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import RouteMeta from "./RouteMeta";
 
 export default function SiteLayout() {
   return (
@@ -12,6 +13,7 @@ export default function SiteLayout() {
       >
         Skip to content
       </a>
+      <RouteMeta />
       <Header />
       <main id="main" className="flex-1">
         <Outlet />

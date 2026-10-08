@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prem-structure-systems.base44.app/sitemap.xml

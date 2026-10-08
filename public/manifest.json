@@ -1,0 +1,10 @@
+{
+  "name": "Prem Technology Inc.",
+  "short_name": "Prem Technology",
+  "description": "Specialized structural engineering for complex infrastructure.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#121212"
+}

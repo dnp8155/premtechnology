@@ -127,6 +127,7 @@ export const SERVICE_GROUPS = [
       "Certification support",
     ],
     details: [
+      ["Applications", "Transmission lines and corridor structures · lattice towers and lattice girders · substation and switchyard structures"],
       ["Deliverables", "Design calculations · structural drawings · review comments · technical reports"],
       ["Interface", "Utilities, EPC teams, fabricators and engineering firms"],
       ["Stage", "Concept through fabrication and construction support"],
@@ -151,6 +152,7 @@ export const SERVICE_GROUPS = [
       "Site inspection",
     ],
     details: [
+      ["Applications", "Deep excavations and shoring · bridge and structure erection · formwork and falsework systems · construction access and support"],
       ["Deliverables", "Temporary works calculations · drawings · method review · inspection reporting"],
       ["Interface", "General contractors, heavy civil contractors and site teams"],
       ["Stage", "Pre-construction planning through execution"],
@@ -173,6 +175,7 @@ export const SERVICE_GROUPS = [
       "Wastewater infrastructure",
     ],
     details: [
+      ["Applications", "LRT, metro and transit structures · tunnels, shafts and portals · bridges and overpasses · water and wastewater facilities"],
       ["Deliverables", "Design support · construction-phase engineering · review and documentation"],
       ["Interface", "Contractors, public infrastructure owners and engineering teams"],
       ["Stage", "Design development through construction"],
@@ -196,6 +199,7 @@ export const SERVICE_GROUPS = [
       "Material and technical evaluation",
     ],
     details: [
+      ["Applications", "Independent design review · peer review and checking · site and fabrication inspection · project engineering support"],
       ["Deliverables", "Review comments · marked-up drawings · technical reports · inspection records"],
       ["Interface", "Design teams, contractors, fabricators and owners"],
       ["Stage", "Targeted review or ongoing project support"],
