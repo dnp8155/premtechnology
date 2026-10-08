@@ -1,0 +1,87 @@
+{
+  "name": "Inquiry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the person submitting the enquiry"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company or organisation"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "project_type": {
+      "type": "string",
+      "description": "Project type selected on the enquiry form",
+      "enum": [
+        "Transmission / Power Structures",
+        "Temporary Works",
+        "Shoring / Formwork",
+        "Heavy Civil",
+        "LRT / Metro",
+        "Bridge / Overpass",
+        "Tunnel / Underground",
+        "Water / Wastewater",
+        "Other"
+      ]
+    },
+    "project_location": {
+      "type": "string",
+      "description": "Project location (city, province or state)"
+    },
+    "requirements": {
+      "type": "string",
+      "description": "Short summary of the project requirements"
+    },
+    "message": {
+      "type": "string",
+      "description": "Full enquiry message"
+    },
+    "file_uri": {
+      "type": "string",
+      "description": "Private storage reference for any document attached to the enquiry"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "Original file name of the attachment"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "message"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
