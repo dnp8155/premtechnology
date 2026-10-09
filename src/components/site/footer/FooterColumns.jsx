@@ -42,7 +42,7 @@ export default function FooterColumns() {
   return (
     <section className="relative overflow-hidden bg-secondary">
       {/* Line art bottom-left */}
-      <InfrastructureLineArt className="pointer-events-none absolute -bottom-1 left-0 h-28 w-[440px] text-ink/[0.07]" />
+      <InfrastructureLineArt className="pointer-events-none absolute bottom-0 left-0 h-32 w-full text-ink/[0.07]" />
 
       <div className="shell relative py-16 lg:py-20">
         <div className="flex flex-col xl:flex-row xl:gap-8">

@@ -38,7 +38,7 @@ export default function FooterCta() {
 
         {/* Right: image */}
         <Reveal className="relative lg:col-span-4" delay={0.16}>
-          <div className="relative h-64 overflow-hidden border border-border lg:h-full lg:min-h-[360px]">
+          <div className="relative h-64 lg:h-full lg:min-h-[360px]">
             <Image
               src={IMG.appBridge}
               alt="Steel plate girder bridge span under construction over water"
@@ -46,11 +46,15 @@ export default function FooterCta() {
               className="h-full w-full object-cover"
             />
             <div
-              className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent"
+              className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-y-0 right-0 w-3/4 bg-gradient-to-l from-ink/45 via-ink/15 to-transparent"
               aria-hidden="true"
             />
             <div className="absolute right-4 top-4 text-right">
-              <span className="display text-5xl font-semibold leading-none text-white/85">01</span>
+              <span className="display text-5xl font-semibold leading-none text-white/45">01</span>
               <div className="mt-2.5 space-y-1">
                 <p className="label-mono text-white/80">Structures</p>
                 <p className="label-mono text-white/80">Infrastructure</p>
