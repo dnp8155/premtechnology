@@ -71,6 +71,13 @@ export default function Header() {
       >
         <div
           className={cn(
+            "absolute inset-x-0 top-0 h-px transition-colors duration-500",
+            open ? "bg-white/25" : scrolled ? "bg-brand" : "bg-white/25"
+          )}
+          aria-hidden="true"
+        />
+        <div
+          className={cn(
             "shell flex items-center justify-between transition-all duration-500",
             scrolled ? "h-[68px]" : "h-[78px] lg:h-[92px]"
           )}
@@ -85,7 +92,16 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-5">
+            <span
+              className={cn(
+                "label-mono hidden xl:inline-flex items-center gap-2",
+                light ? "text-white/55" : "text-steel"
+              )}
+            >
+              <span aria-hidden="true" className={cn("h-px w-5", light ? "bg-white/30" : "bg-steel/40")} />
+              CAN / USA
+            </span>
             <Link to="/contact" className={cn("hidden md:inline-flex", light ? "btn-outline-light" : "btn-solid-dark")}>
               Discuss Your Project
             </Link>

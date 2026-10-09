@@ -5,24 +5,40 @@ import { COMPANY, NAV } from "@/lib/nav";
 import { Mark } from "./Wordmark";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-graphite text-white">
-      <div className="shell py-16 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5">
-            <Link to="/" className="flex items-center gap-3 text-white" aria-label="Prem Technology Inc. — home">
-              <Mark className="h-6 w-6" />
-              <span className="t-small font-display font-semibold leading-none tracking-[0.06em]">
-                {COMPANY.name}
-              </span>
-            </Link>
-            <p className="t-body mt-7 max-w-sm leading-relaxed text-white/70">{COMPANY.tagline}</p>
-            <p className="label-text mt-7 text-white/55">{COMPANY.markets}</p>
+    <footer className="relative overflow-hidden bg-graphite text-white">
+      <div className="tech-grid-dark absolute inset-0 opacity-40" aria-hidden="true" />
+      <div className="absolute inset-x-0 top-0 h-px bg-brand/60" aria-hidden="true" />
+
+      <div className="shell relative py-16 lg:py-24">
+        {/* Editorial brand statement */}
+        <div className="border-b border-white/12 pb-12 lg:pb-16">
+          <div className="flex items-center gap-3 text-white/55">
+            <Mark className="h-5 w-5" />
+            <span className="label-mono">{COMPANY.name}</span>
+          </div>
+          <h2 className="display t-hero mt-6 max-w-[16ch] text-white">
+            Engineering for complex infrastructure.
+          </h2>
+          <p className="t-body mt-6 max-w-md leading-relaxed text-white/65">{COMPANY.tagline}</p>
+        </div>
+
+        {/* Columns */}
+        <div className="grid grid-cols-1 gap-12 py-12 lg:grid-cols-12 lg:gap-8 lg:py-16">
+          <div className="lg:col-span-4">
+            <h3 className="label-mono text-white/45">Practice</h3>
+            <p className="t-body mt-5 leading-relaxed text-white/70">
+              Specialized structural engineering for heavy civil, transit, transmission and temporary
+              works across North America.
+            </p>
+            <p className="label-text mt-6 text-white/50">{COMPANY.markets}</p>
           </div>
 
           <nav aria-label="Footer" className="lg:col-span-3">
-            <h2 className="label-mono text-white/55">Navigation</h2>
-            <ul className="mt-6 space-y-3">
+            <h3 className="label-mono text-white/45">Navigation</h3>
+            <ul className="mt-5 space-y-3.5">
               {NAV.map((item) => (
                 <li key={item.path}>
                   <Link
@@ -36,11 +52,11 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-4">
-            <h2 className="label-mono text-white/55">Engagements</h2>
-            <p className="t-body mt-6 max-w-sm leading-relaxed text-white/70">
-              Have a technically demanding structural or infrastructure requirement? Send us the scope and our
-              engineering team will review the opportunity.
+          <div className="lg:col-span-5">
+            <h3 className="label-mono text-white/45">Engagements</h3>
+            <p className="t-body mt-5 max-w-sm leading-relaxed text-white/70">
+              Have a technically demanding structural or infrastructure requirement? Send us the scope
+              and our engineering team will review the opportunity.
             </p>
             <Link to="/contact" className="btn-outline-light mt-7">
               Discuss Your Project
@@ -49,15 +65,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-5 border-t border-white/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="label-text text-white/55">
-            © {new Date().getFullYear()} {COMPANY.legal}
+        {/* Bottom bar */}
+        <div className="flex flex-col gap-5 border-t border-white/12 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="label-text text-white/50">
+            © {year} {COMPANY.legal}
           </p>
           <div className="flex items-center gap-7">
-            <Link to="/privacy" className="label-mono text-white/55 transition-colors hover:text-white">
+            <Link to="/privacy" className="label-mono text-white/50 transition-colors hover:text-white">
               Privacy
             </Link>
-            <Link to="/terms" className="label-mono text-white/55 transition-colors hover:text-white">
+            <Link to="/terms" className="label-mono text-white/50 transition-colors hover:text-white">
               Terms
             </Link>
           </div>
