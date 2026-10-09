@@ -1,30 +1,21 @@
 import React from "react";
-import { cn } from "@/lib/utils";
 
 export default function BlueprintOverlay({ className }) {
   return (
     <svg
-      viewBox="0 0 400 560"
+      viewBox="0 0 360 300"
       fill="none"
-      stroke="currentColor"
-      strokeWidth={1}
-      strokeLinecap="round"
-      className={cn("h-full w-full text-white/20", className)}
+      className={className}
       aria-hidden="true"
-      preserveAspectRatio="none"
     >
-      {/* horizontal grid */}
-      <path d="M0 120 H400 M0 240 H400 M0 360 H400 M0 480 H400" />
-      {/* vertical grid */}
-      <path d="M100 0 V560 M260 0 V560 M340 0 V560" />
-      {/* crosshair */}
-      <circle cx="200" cy="280" r="14" />
-      <path d="M200 260 V300 M180 280 H220" />
-      {/* measurement ticks */}
-      <path d="M40 200 V210 M40 205 H52" />
-      <path d="M360 400 V390 M360 395 H348" />
-      {/* small truss sketch */}
-      <path d="M280 440 L300 470 L320 440 M300 470 L300 440 M280 440 L320 440 M290 455 L310 455" />
+      <g stroke="#6b91ba" strokeWidth="1">
+        <path d="M10 250H340M35 270V30M70 260V65M35 80H150M35 110H150M35 140H150M35 170H150" />
+        <path d="M170 260L220 55L270 260M190 178H250M198 145H242M207 112H233M180 225H260M220 55L170 260M220 55L270 260M185 195L255 195M192 165L248 165M200 130L240 130" />
+        <path d="M285 60H335M310 35V85M290 115H335M310 100V130" />
+      </g>
+      <g stroke="#0878f9" strokeWidth="1.5">
+        <path d="M18 20H55M18 20V55M315 270H350M350 235V270" />
+      </g>
     </svg>
   );
 }

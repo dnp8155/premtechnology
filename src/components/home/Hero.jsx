@@ -1,15 +1,15 @@
 import React from "react";
 import HeroNav from "./HeroNav";
 import HeroStage from "./HeroStage";
+import HomeScrollHeader from "./HomeScrollHeader";
 
 export default function Hero() {
   return (
-    <section className="relative mt-3 sm:mt-4 lg:mt-6">
-      <div className="mx-3 overflow-visible rounded-2xl border-2 border-ink sm:mx-4 lg:mx-6">
+    <section className="bg-[#eaf1fb] p-6 max-[1100px]:p-3 max-[760px]:p-2">
+      <HomeScrollHeader />
+      <div className="mx-auto max-w-[1540px] overflow-hidden rounded-[30px] border-8 border-[#101c2a] bg-[#f7faff] shadow-[0_22px_60px_#0e223a2e] max-[760px]:rounded-[20px] max-[760px]:border-4">
         <HeroNav />
-        <div className="overflow-hidden rounded-b-2xl">
-          <HeroStage />
-        </div>
+        <HeroStage />
       </div>
     </section>
   );
