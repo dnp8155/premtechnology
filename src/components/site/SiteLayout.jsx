@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import FloatingCta from "./FloatingCta";
 import RouteMeta from "./RouteMeta";
 
 export default function SiteLayout() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <a
@@ -15,7 +17,7 @@ export default function SiteLayout() {
         Skip to content
       </a>
       <RouteMeta />
-      <Header />
+      {!isHome && <Header />}
       <main id="main" className="flex-1">
         <Outlet />
       </main>
