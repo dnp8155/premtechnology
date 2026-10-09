@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import FloatingCta from "./FloatingCta";
 import RouteMeta from "./RouteMeta";
 
 export default function SiteLayout() {
@@ -19,6 +20,7 @@ export default function SiteLayout() {
         <Outlet />
       </main>
       <Footer />
+      <FloatingCta />
     </div>
   );
 }

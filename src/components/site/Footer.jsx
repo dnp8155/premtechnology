@@ -65,6 +65,16 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Oversized architectural wordmark */}
+        <div className="relative overflow-hidden border-t border-white/12 pt-10" aria-hidden="true">
+          <h2
+            className="display select-none whitespace-nowrap font-semibold leading-[0.78] tracking-[-0.04em] text-white/[0.07]"
+            style={{ fontSize: "clamp(3rem, 13.5vw, 13rem)" }}
+          >
+            PREM TECHNOLOGY
+          </h2>
+        </div>
+
         {/* Bottom bar */}
         <div className="flex flex-col gap-5 border-t border-white/12 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="label-text text-white/50">
