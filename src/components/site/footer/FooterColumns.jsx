@@ -37,9 +37,9 @@ const FOOTER_SUPPORT = [
 ];
 
 const headingClass =
-  "mb-5 text-[13px] font-black tracking-[0.3px] text-[#142b43] max-[600px]:mb-3.5";
+  "mb-5 text-[13px] font-black tracking-[0.3px] text-black max-[600px]:mb-3.5";
 const linkClass =
-  "text-[13px] leading-[1.3] text-[#3e5269] transition-colors hover:text-[#0878f9]";
+  "text-[13px] leading-[1.3] text-black transition-colors hover:text-[#0878f9]";
 
 function Heading({ children }) {
   return (
@@ -74,20 +74,20 @@ export default function FooterColumns() {
       {/* Col 1: Company */}
       <div className="min-w-0 pr-5 max-[600px]:col-span-2 max-[600px]:pr-0">
         <Link to="/" className="inline-flex flex-col leading-none" aria-label="Prem Technology Inc. home">
-          <strong className="flex items-center font-display text-[#142b43] font-black tracking-[-1.5px]" style={{ fontSize: "clamp(26px,2.3vw,42px)" }}>
+          <strong className="flex items-center font-display text-black font-black tracking-[-1.5px]" style={{ fontSize: "clamp(26px,2.3vw,42px)" }}>
             PREM
             <i className="ml-[7px] mt-[5px] inline-block h-[13px] w-[13px] bg-[#0878f9]" aria-hidden="true" />
           </strong>
-          <small className="mt-[7px] text-[10px] font-semibold tracking-[6px] text-[#344b63]">
+          <small className="mt-[7px] text-[10px] font-semibold tracking-[6px] text-black">
             TECHNOLOGY INC.
           </small>
         </Link>
         <div className="my-2.5 h-[3px] w-[31px] bg-[#0878f9]" aria-hidden="true" />
-        <p className="mb-4 max-w-[330px] text-sm leading-[1.5] text-[#40536a]">
+        <p className="mb-4 max-w-[330px] text-sm leading-[1.5] text-black">
           Specialized structural engineering for complex infrastructure and construction
           projects across Canada and the USA.
         </p>
-        <div className="text-[9px] font-extrabold leading-[1.9] tracking-[0.7px] text-[#344b63]">
+        <div className="text-[9px] font-extrabold leading-[1.9] tracking-[0.7px] text-black">
           TRANSMISSION&nbsp; | &nbsp;TEMPORARY WORKS&nbsp; | &nbsp;HEAVY CIVIL&nbsp; | &nbsp;INFRASTRUCTURE
         </div>
       </div>
@@ -131,7 +131,7 @@ export default function FooterColumns() {
       {/* Col 5: Stay Connected */}
       <div className="min-w-0 border-l border-[#d5e0eb] px-5 max-[600px]:col-span-2 max-[600px]:border-l-0 max-[600px]:pl-0">
         <Heading>STAY CONNECTED</Heading>
-        <p className="mb-4 text-[13px] leading-[1.5] text-[#40536a]">
+        <p className="mb-4 text-[13px] leading-[1.5] text-black">
           Get engineering insights, project updates and industry news.
         </p>
         <form onSubmit={onSubmit} className="flex h-[47px] items-center rounded-[10px] border border-[#b9c8d8] bg-white p-1 shadow-[0_5px_12px_rgba(21,49,77,0.06)]">
@@ -141,7 +141,7 @@ export default function FooterColumns() {
             placeholder="Your email address"
             aria-label="Your email address"
             required
-            className="min-w-0 flex-1 border-0 bg-transparent px-2 text-[12px] text-[#142b43] outline-none placeholder:text-[#40536a]/55"
+            className="min-w-0 flex-1 border-0 bg-transparent px-2 text-[12px] text-black outline-none placeholder:text-black/55"
           />
           <button
             type="submit"
