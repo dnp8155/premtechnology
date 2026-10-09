@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { IMG } from "@/lib/images";
 
-const BLUEPRINT = IMG.footerBlueprint;
+const HERO_IMAGE = IMG.appBridge;
 
 function CtaButton({ to, label, primary }) {
   return (
@@ -34,7 +34,7 @@ export default function FooterCta() {
       className="relative grid items-center gap-7 overflow-hidden border-b-8 border-[#102638] px-[5.2%] py-[34px] min-h-[255px] max-[950px]:gap-6 max-[600px]:flex max-[600px]:flex-col max-[600px]:items-stretch max-[600px]:gap-[22px] max-[600px]:px-[22px] max-[600px]:py-7"
       style={{
         gridTemplateColumns: "1.18fr 0.72fr 1.25fr",
-        background: `linear-gradient(90deg,#f8fbff 0%,#f8fbff 46%,rgba(248,251,255,0.84) 57%,rgba(248,251,255,0.02) 76%), url(${BLUEPRINT})`,
+        background: `linear-gradient(90deg,#f8fbff 0%,#f8fbff 46%,rgba(248,251,255,0.84) 57%,rgba(248,251,255,0.02) 76%), url(${HERO_IMAGE})`,
         backgroundSize: "cover",
         backgroundPosition: "center right",
       }}
