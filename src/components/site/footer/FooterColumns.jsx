@@ -61,26 +61,15 @@ export default function FooterColumns() {
   return (
     <footer
       className="relative grid min-h-[325px] gap-0 overflow-hidden px-[5.2%] pb-[34px] pt-[38px] max-[1350px]:grid-cols-[1.45fr_0.68fr_1.1fr_1fr_1.1fr] max-[950px]:grid-cols-[1.3fr_1fr_1fr] max-[950px]:gap-x-0 max-[950px]:gap-y-8 max-[600px]:grid-cols-[1fr_1fr] max-[600px]:px-[22px] max-[600px]:py-7 max-[600px]:gap-y-7"
-      style={{ gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr" }}
+      style={{
+        gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr",
+        backgroundColor: "#f9fafb",
+        backgroundImage: `url(${BLUEPRINT})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center bottom",
+        backgroundSize: "cover",
+      }}
     >
-      {/* Light wash base */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[-2] bg-[#f9fafb]"
-        aria-hidden="true"
-      />
-      {/* Blueprint watermark — full section */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[-1]"
-        style={{
-          backgroundImage: `url(${BLUEPRINT})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center bottom",
-          backgroundSize: "cover",
-          opacity: 0.55,
-          mixBlendMode: "multiply",
-        }}
-        aria-hidden="true"
-      />
 
       {/* Col 1: Company */}
       <div className="min-w-0 pr-5 max-[600px]:col-span-2 max-[600px]:pr-0">
