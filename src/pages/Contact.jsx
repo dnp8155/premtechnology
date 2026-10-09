@@ -3,6 +3,7 @@ import PageHero from "@/components/site/PageHero";
 import Reveal from "@/components/site/Reveal";
 import SectionMeta from "@/components/site/SectionMeta";
 import ContactForm from "@/components/contact/ContactForm";
+import { CONTACT_INFO } from "@/lib/content";
 
 const STEPS = [
   ["01", "Scope review", "We review your enquiry together with any drawings, specifications or brief provided."],
@@ -44,6 +45,22 @@ export default function Contact() {
                 <div className="flex items-baseline justify-between gap-6 border-b border-border py-4">
                   <dt className="label-mono text-steel">Markets</dt>
                   <dd className="text-[15px] text-ink">Canada / USA</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-6 border-b border-border py-4">
+                  <dt className="label-mono text-steel">Phone</dt>
+                  <dd className="text-[15px] text-ink">
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="transition-colors hover:text-brand">
+                      {CONTACT_INFO.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-6 border-b border-border py-4">
+                  <dt className="label-mono text-steel">Email</dt>
+                  <dd className="text-[15px] text-ink">
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="transition-colors hover:text-brand">
+                      {CONTACT_INFO.email}
+                    </a>
+                  </dd>
                 </div>
                 <div className="flex items-baseline justify-between gap-6 border-b border-border py-4">
                   <dt className="label-mono text-steel">Discipline</dt>

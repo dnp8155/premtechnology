@@ -322,3 +322,25 @@ export const PROJECT_TYPES = [
   "Water / Wastewater",
   "Other",
 ];
+
+export const SERVICE_CARD = {
+  specializations: [
+    "Residential, Commercial & Parking Garages",
+    "Heavy Civil Infrastructure Projects",
+    "Overpasses, Bridges",
+    "LRT / Metro Tunnels",
+    "Wastewater & Water Treatment Plants",
+  ],
+  technicalServices: [
+    "Restoration, Refurbishment, and Reshoring",
+    "Mechanical & Structural Engineering Drawings",
+    "Site Inspection & Structural Diagnostics",
+    "Material Testing & Certified Test Reports",
+    "Project Planning & Management",
+  ],
+};
+
+export const CONTACT_INFO = {
+  phone: "942-880-4032",
+  email: "premtechinc@yahoo.ca",
+};

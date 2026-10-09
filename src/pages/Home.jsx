@@ -11,6 +11,7 @@ import ApproachTimeline from "@/components/home/ApproachTimeline";
 import TechnicalCapabilities from "@/components/home/TechnicalCapabilities";
 import WhyPrem from "@/components/home/WhyPrem";
 import WhoWeSupport from "@/components/home/WhoWeSupport";
+import ServicesCard from "@/components/home/ServicesCard";
 import CtaBand from "@/components/site/CtaBand";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <TechnicalCapabilities />
       <WhyPrem />
       <WhoWeSupport />
+      <ServicesCard />
       <CtaBand
         eyebrow="Engagement"
         title="Let's engineer the next stage."

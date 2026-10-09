@@ -6,6 +6,7 @@ import ServiceGroup from "@/components/services/ServiceGroup";
 import CtaBand from "@/components/site/CtaBand";
 import { SERVICE_GROUPS } from "@/lib/content";
 import { IMG } from "@/lib/images";
+import CapabilitiesOverview from "@/components/services/CapabilitiesOverview";
 
 const INDEX = [
   ["01", "Transmission & Power Structures"],
@@ -59,6 +60,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <CapabilitiesOverview />
 
       <section className="bg-background">
         <div className="shell pb-20 pt-12 lg:pb-28 lg:pt-16">
