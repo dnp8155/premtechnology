@@ -1,41 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
-import { COMPANY } from "@/lib/nav";
 import FooterCta from "./footer/FooterCta";
 import FooterColumns from "./footer/FooterColumns";
+import FooterLegal from "./footer/FooterLegal";
 
 export default function Footer() {
   return (
-    <footer className="bg-background">
-      <FooterCta />
-      <FooterColumns />
-
-      {/* Legal bar */}
-      <div className="border-t border-border bg-background">
-        <div className="shell flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="label-text text-steel">
-            © 2024 {COMPANY.legal}. All rights reserved.
-          </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link to="/privacy" className="label-mono text-steel transition-colors hover:text-ink">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="label-mono text-steel transition-colors hover:text-ink">
-              Terms of Use
-            </Link>
-            <a
-              href="/sitemap.xml"
-              className="label-mono text-steel transition-colors hover:text-ink"
-            >
-              Sitemap
-            </a>
-            <span className="label-mono flex items-center gap-1.5 text-steel">
-              <Globe size={13} aria-hidden="true" />
-              {COMPANY.markets}
-            </span>
-          </div>
-        </div>
+    <footer className="bg-[#eaf1fb] p-3 sm:p-4 max-[600px]:p-[7px]">
+      <div className="mx-auto max-w-[2048px] overflow-hidden rounded-[30px] border-8 border-[#102638] bg-[#f8fbff] shadow-[0_22px_60px_rgba(14,34,58,0.17)] max-[600px]:rounded-[20px] max-[600px]:border-[5px]">
+        <FooterCta />
+        <FooterColumns />
+        <FooterLegal />
       </div>
     </footer>
   );

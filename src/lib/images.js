@@ -20,4 +20,5 @@ export const IMG = {
   falsework: `${BASE}2f1896e5b_generated_101cd702.png`,
   civilStructures: `${BASE}7c4c90fee_generated_5236f6aa.png`,
   technicalReview: `${BASE}bbec0beff_generated_5ca52ecd.png`,
+  footerBlueprint: `${BASE}19d6a5c3a_BlueprintInfrastructureCityscape.png`,
 };

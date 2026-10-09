@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Linkedin, Youtube, Mail } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { IMG } from "@/lib/images";
-import { Mark } from "@/components/site/Wordmark";
-import InfrastructureLineArt from "./InfrastructureLineArt";
+import { CONTACT_INFO } from "@/lib/content";
+
+const BLUEPRINT = IMG.footerBlueprint;
 
 const FOOTER_NAV = [
   { label: "Home", path: "/" },
@@ -35,153 +36,211 @@ const FOOTER_SUPPORT = [
   "Developers",
 ];
 
-const headingClass = "font-display text-[13px] font-semibold uppercase tracking-[0.06em] text-brand";
-const linkClass = "t-small text-steel transition-colors hover:text-ink";
+const headingClass =
+  "mb-5 text-[13px] font-black tracking-[0.3px] text-[#142b43] max-[600px]:mb-3.5";
+const linkClass =
+  "text-[13px] leading-[1.3] text-[#3e5269] transition-colors hover:text-[#0878f9]";
+
+function Heading({ children }) {
+  return (
+    <h3 className={headingClass}>
+      {children}
+      <span className="mt-3 block h-[3px] w-[27px] bg-[#0878f9]" aria-hidden="true" />
+    </h3>
+  );
+}
 
 export default function FooterColumns() {
+  const [status, setStatus] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setStatus("Newsletter signup needs to be connected to a subscription service.");
+  };
+
   return (
-    <section className="relative overflow-hidden bg-secondary">
-      {/* Line art bottom-left */}
-      <InfrastructureLineArt className="pointer-events-none absolute bottom-0 left-0 h-32 w-full text-ink/[0.07]" />
+    <footer
+      className="relative grid min-h-[325px] gap-0 overflow-hidden px-[5.2%] pb-[34px] pt-[38px] max-[1350px]:grid-cols-[1.45fr_0.68fr_1.1fr_1fr_1.1fr] max-[950px]:grid-cols-[1.3fr_1fr_1fr] max-[950px]:gap-x-0 max-[950px]:gap-y-8 max-[600px]:grid-cols-[1fr_1fr] max-[600px]:px-[22px] max-[600px]:py-7 max-[600px]:gap-y-7"
+      style={{ gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr" }}
+    >
+      {/* Lineart background */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 z-[-1] h-[125px] w-[80%] opacity-40"
+        style={{
+          backgroundImage: `url(${BLUEPRINT})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "left bottom",
+          backgroundSize: "contain",
+        }}
+        aria-hidden="true"
+      />
+      {/* Gradient wash */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[-2]"
+        style={{
+          background:
+            "linear-gradient(180deg,#f8fbff 0%,rgba(248,251,255,0.91) 60%,rgba(248,251,255,0.36) 100%)",
+        }}
+        aria-hidden="true"
+      />
 
-      <div className="shell relative py-16 lg:py-20">
-        <div className="flex flex-col xl:flex-row xl:gap-8">
-          <div className="grid flex-1 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-            {/* Column 1: Brand */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <Link to="/" className="inline-block">
-                <div className="flex items-center gap-2.5">
-                  <Mark className="h-6 w-6 text-brand" />
-                  <span className="display text-2xl font-bold leading-none text-ink">PREM</span>
-                </div>
-                <p className="label-mono mt-2 pl-[34px] text-steel">Technology Inc.</p>
-              </Link>
-              <div className="mt-4 h-px w-12 bg-brand" aria-hidden="true" />
-              <p className="t-body mt-5 leading-relaxed text-steel">
-                Specialized structural engineering for complex infrastructure and construction
-                projects across Canada and the USA.
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
-                <span className="label-mono text-steel/70">Transmission</span>
-                <span className="text-steel/30">|</span>
-                <span className="label-mono text-steel/70">Temporary Works</span>
-                <span className="text-steel/30">|</span>
-                <span className="label-mono text-steel/70">Heavy Civil</span>
-                <span className="text-steel/30">|</span>
-                <span className="label-mono text-steel/70">Infrastructure</span>
-              </div>
-            </div>
-
-            {/* Column 2: Navigation */}
-            <div>
-              <h3 className={headingClass}>Navigation</h3>
-              <ul className="mt-5 space-y-3">
-                {FOOTER_NAV.map((item) => (
-                  <li key={item.path}>
-                    <Link to={item.path} className={linkClass}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 3: Services */}
-            <div>
-              <h3 className={headingClass}>Our Services</h3>
-              <ul className="mt-5 space-y-3">
-                {FOOTER_SERVICES.map((item) => (
-                  <li key={item.label}>
-                    <Link to={item.path} className={linkClass}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 4: Who We Support */}
-            <div>
-              <h3 className={headingClass}>Who We Support</h3>
-              <ul className="mt-5 space-y-3">
-                {FOOTER_SUPPORT.map((item) => (
-                  <li key={item}>
-                    <Link to="/about" className={linkClass}>
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 5: Stay Connected */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className={headingClass}>Stay Connected</h3>
-              <p className="t-small mt-5 leading-relaxed text-steel">
-                Get engineering insights, project updates and industry news.
-              </p>
-              <form onSubmit={(e) => e.preventDefault()} className="mt-5">
-                <div className="flex items-center border border-ink/20 bg-white">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full bg-transparent px-3.5 py-3 text-[14px] text-ink placeholder:text-steel/55 focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    aria-label="Subscribe"
-                    className="flex items-center border-l border-ink/15 px-3.5 py-3 text-brand transition-colors hover:bg-brand hover:text-white"
-                  >
-                    <ArrowRight size={16} aria-hidden="true" />
-                  </button>
-                </div>
-              </form>
-              <div className="mt-5 flex items-center gap-2.5">
-                <span
-                  className="flex h-9 w-9 items-center justify-center border border-ink/20 text-ink transition-colors hover:border-brand hover:text-brand"
-                  aria-hidden="true"
-                >
-                  <Linkedin size={16} />
-                </span>
-                <span
-                  className="flex h-9 w-9 items-center justify-center border border-ink/20 text-ink transition-colors hover:border-brand hover:text-brand"
-                  aria-hidden="true"
-                >
-                  <Youtube size={16} />
-                </span>
-                <Link
-                  to="/contact"
-                  className="flex h-9 w-9 items-center justify-center border border-ink/20 text-ink transition-colors hover:border-brand hover:text-brand"
-                  aria-label="Email"
-                >
-                  <Mail size={16} />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Right image panel */}
-          <div
-            className="relative hidden w-44 shrink-0 overflow-hidden self-stretch xl:block"
-            style={{ clipPath: "polygon(22% 0, 100% 0, 100% 100%, 0 100%)" }}
-          >
-            <Image
-              src={IMG.steelDetail}
-              alt="Close-up of structural steel connection detail"
-              fittingType="fill"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-ink/35" aria-hidden="true" />
-            <div className="absolute bottom-6 right-5 space-y-1.5 text-right">
-              <p className="label-mono text-white/85">People</p>
-              <p className="label-mono text-white/85">Engineering</p>
-              <p className="label-mono text-white/85">Infrastructure</p>
-              <p className="label-mono text-white/85">Communities</p>
-              <p className="label-mono mt-3 text-white">For a stronger tomorrow</p>
-            </div>
-          </div>
+      {/* Col 1: Company */}
+      <div className="min-w-0 pr-5 max-[600px]:col-span-2 max-[600px]:pr-0">
+        <Link to="/" className="inline-flex flex-col leading-none" aria-label="Prem Technology Inc. home">
+          <strong className="flex items-center font-display text-[#142b43] font-black tracking-[-1.5px]" style={{ fontSize: "clamp(26px,2.3vw,42px)" }}>
+            PREM
+            <i className="ml-[7px] mt-[5px] inline-block h-[13px] w-[13px] bg-[#0878f9]" aria-hidden="true" />
+          </strong>
+          <small className="mt-[7px] text-[10px] font-semibold tracking-[6px] text-[#344b63]">
+            TECHNOLOGY INC.
+          </small>
+        </Link>
+        <div className="my-2.5 h-[3px] w-[31px] bg-[#0878f9]" aria-hidden="true" />
+        <p className="mb-4 max-w-[330px] text-sm leading-[1.5] text-[#40536a]">
+          Specialized structural engineering for complex infrastructure and construction
+          projects across Canada and the USA.
+        </p>
+        <div className="text-[9px] font-extrabold leading-[1.9] tracking-[0.7px] text-[#344b63]">
+          TRANSMISSION&nbsp; | &nbsp;TEMPORARY WORKS&nbsp; | &nbsp;HEAVY CIVIL&nbsp; | &nbsp;INFRASTRUCTURE
         </div>
       </div>
-    </section>
+
+      {/* Col 2: Navigation */}
+      <div className="min-w-0 border-l border-[#d5e0eb] px-5 max-[950px]:border-l-0 max-[950px]:pl-0 max-[600px]:pr-0">
+        <Heading>NAVIGATION</Heading>
+        <nav className="grid gap-2.5" aria-label="Footer navigation">
+          {FOOTER_NAV.map((item) => (
+            <Link key={item.path} to={item.path} className={linkClass}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Col 3: Services */}
+      <div className="min-w-0 border-l border-[#d5e0eb] px-5 max-[600px]:col-span-2 max-[600px]:border-l-0 max-[600px]:pl-0">
+        <Heading>OUR SERVICES</Heading>
+        <nav className="grid gap-2.5" aria-label="Footer services">
+          {FOOTER_SERVICES.map((item) => (
+            <Link key={item.label} to={item.path} className={linkClass}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Col 4: Who We Support */}
+      <div className="min-w-0 border-l border-[#d5e0eb] px-5 max-[950px]:border-l-0 max-[950px]:pl-0 max-[600px]:col-span-2">
+        <Heading>WHO WE SUPPORT</Heading>
+        <nav className="grid gap-2.5" aria-label="Clients and sectors">
+          {FOOTER_SUPPORT.map((item) => (
+            <Link key={item} to="/about" className={linkClass}>
+              {item}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Col 5: Stay Connected */}
+      <div className="min-w-0 border-l border-[#d5e0eb] px-5 max-[600px]:col-span-2 max-[600px]:border-l-0 max-[600px]:pl-0">
+        <Heading>STAY CONNECTED</Heading>
+        <p className="mb-4 text-[13px] leading-[1.5] text-[#40536a]">
+          Get engineering insights, project updates and industry news.
+        </p>
+        <form onSubmit={onSubmit} className="flex h-[47px] items-center rounded-[10px] border border-[#b9c8d8] bg-white p-1 shadow-[0_5px_12px_rgba(21,49,77,0.06)]">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            aria-label="Your email address"
+            required
+            className="min-w-0 flex-1 border-0 bg-transparent px-2 text-[12px] text-[#142b43] outline-none placeholder:text-[#40536a]/55"
+          />
+          <button
+            type="submit"
+            aria-label="Submit email"
+            className="grid h-[37px] w-[37px] shrink-0 place-items-center rounded-full bg-[#0878f9] text-white transition-colors hover:bg-[#0065dd]"
+          >
+            <ArrowRight size={18} strokeWidth={2.5} aria-hidden="true" />
+          </button>
+        </form>
+        {status && (
+          <p className="mt-2.5 text-[11px] leading-[1.5] text-[#40536a]" aria-live="polite">
+            {status}
+          </p>
+        )}
+        <div className="mt-4 flex gap-2.5">
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            title="Add your LinkedIn URL"
+            className="grid h-[43px] w-[43px] place-items-center rounded-[9px] border border-[#c4d1df] bg-white/85 text-[#142b43] shadow-[0_5px_12px_rgba(21,49,77,0.05)] transition-colors hover:border-[#0878f9] hover:text-[#0878f9]"
+          >
+            <Linkedin size={16} strokeWidth={2.5} />
+          </a>
+          <a
+            href="#"
+            aria-label="YouTube"
+            title="Add your YouTube URL"
+            className="grid h-[43px] w-[43px] place-items-center rounded-[9px] border border-[#c4d1df] bg-white/85 text-[#142b43] shadow-[0_5px_12px_rgba(21,49,77,0.05)] transition-colors hover:border-[#0878f9] hover:text-[#0878f9]"
+          >
+            <Youtube size={16} strokeWidth={2.5} />
+          </a>
+          <a
+            href={`mailto:${CONTACT_INFO.email}`}
+            aria-label="Email Prem Technology"
+            className="grid h-[43px] w-[43px] place-items-center rounded-[9px] border border-[#c4d1df] bg-white/85 text-[#142b43] shadow-[0_5px_12px_rgba(21,49,77,0.05)] transition-colors hover:border-[#0878f9] hover:text-[#0878f9]"
+          >
+            <Mail size={16} strokeWidth={2.5} />
+          </a>
+        </div>
+      </div>
+
+      {/* Col 6: Image panel */}
+      <div
+        className="relative hidden max-[1350px]:hidden max-[600px]:col-span-2 max-[600px]:block max-[600px]:min-h-[200px]"
+        style={{
+          alignSelf: "stretch",
+          minHeight: 280,
+          overflow: "hidden",
+          borderRadius: "12px 12px 12px 48px",
+          background: "#0d2236",
+          clipPath: "polygon(0 0,100% 0,100% 100%,20% 100%,0 78%)",
+        }}
+      >
+        <Image
+          src={IMG.steelDetail}
+          alt="Steel bridge structure and engineering details"
+          fittingType="fill"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{ background: "linear-gradient(180deg,rgba(11,28,43,0.15),rgba(11,28,43,0.44))" }}
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-5 z-[2] border border-[#83b7e875]"
+          style={{ clipPath: "polygon(0 0,100% 0,100% 100%,15% 100%,0 80%)" }}
+          aria-hidden="true"
+        />
+        <div className="absolute left-3.5 right-2.5 top-[22px] z-[3] text-[9px] font-extrabold leading-[1.65] tracking-[1.2px] text-white [text-shadow:0_2px_8px_#000]">
+          PEOPLE<br />
+          ENGINEERING<br />
+          INFRASTRUCTURE<br />
+          COMMUNITIES<br />
+          FOR A STRONGER<br />
+          TOMORROW
+        </div>
+        <div className="absolute right-2.5 bottom-6 z-[3] text-right text-[9px] font-extrabold leading-[1.7] tracking-[1px] text-white">
+          STRUCTURAL<br />
+          ENGINEERING
+        </div>
+        <div className="absolute left-1/2 top-[52%] z-[3] h-7 w-7 -translate-x-1/2 -translate-y-1/2 opacity-70" aria-hidden="true">
+          <span className="absolute left-0 top-[14px] h-px w-7 bg-[#9ac9f7]" />
+          <span className="absolute left-[14px] top-0 h-7 w-px bg-[#9ac9f7]" />
+        </div>
+      </div>
+    </footer>
   );
 }
