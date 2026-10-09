@@ -5,9 +5,9 @@ import HomeScrollHeader from "./HomeScrollHeader";
 
 export default function Hero() {
   return (
-    <section className="bg-[#eaf1fb] p-6 max-[1100px]:p-3 max-[760px]:p-2">
+    <section className="bg-[#eaf1fb]">
       <HomeScrollHeader />
-      <div className="mx-auto max-w-[1540px] overflow-hidden rounded-[30px] border-8 border-[#101c2a] bg-[#f7faff] shadow-[0_22px_60px_#0e223a2e] max-[760px]:rounded-[20px] max-[760px]:border-4">
+      <div className="overflow-hidden border-8 border-[#101c2a] bg-[#f7faff] max-[760px]:border-4">
         <HeroNav />
         <HeroStage />
       </div>
