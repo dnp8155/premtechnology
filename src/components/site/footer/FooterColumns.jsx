@@ -64,7 +64,7 @@ export default function FooterColumns() {
       style={{
         gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr",
         backgroundColor: "#f9fafb",
-        backgroundImage: `url(${BLUEPRINT})`,
+        backgroundImage: `linear-gradient(rgba(249,250,251,0.6),rgba(249,250,251,0.6)),url(${BLUEPRINT})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center bottom",
         backgroundSize: "cover",
