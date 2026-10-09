@@ -63,23 +63,21 @@ export default function FooterColumns() {
       className="relative grid min-h-[325px] gap-0 overflow-hidden px-[5.2%] pb-[34px] pt-[38px] max-[1350px]:grid-cols-[1.45fr_0.68fr_1.1fr_1fr_1.1fr] max-[950px]:grid-cols-[1.3fr_1fr_1fr] max-[950px]:gap-x-0 max-[950px]:gap-y-8 max-[600px]:grid-cols-[1fr_1fr] max-[600px]:px-[22px] max-[600px]:py-7 max-[600px]:gap-y-7"
       style={{ gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr" }}
     >
-      {/* Blueprint background — full section, subtle */}
+      {/* Light wash base */}
       <div
-        className="pointer-events-none absolute inset-0 z-[-1] opacity-[0.42]"
+        className="pointer-events-none absolute inset-0 z-[-2] bg-[#f9fafb]"
+        aria-hidden="true"
+      />
+      {/* Blueprint watermark — full section */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[-1]"
         style={{
           backgroundImage: `url(${BLUEPRINT})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center bottom",
           backgroundSize: "cover",
-        }}
-        aria-hidden="true"
-      />
-      {/* Light wash overlay for text legibility */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[-1]"
-        style={{
-          background:
-            "linear-gradient(180deg,rgba(248,251,255,0.78) 0%,rgba(248,251,255,0.88) 55%,rgba(248,251,255,0.96) 100%)",
+          opacity: 0.55,
+          mixBlendMode: "multiply",
         }}
         aria-hidden="true"
       />
