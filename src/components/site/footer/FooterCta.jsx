@@ -31,9 +31,8 @@ function CtaButton({ to, label, primary }) {
 export default function FooterCta() {
   return (
     <section
-      className="relative grid items-center gap-7 overflow-hidden border-b-8 border-[#102638] px-[5.2%] py-[34px] min-h-[255px] max-[950px]:gap-6 max-[600px]:flex max-[600px]:flex-col max-[600px]:items-stretch max-[600px]:gap-[22px] max-[600px]:px-[22px] max-[600px]:py-7"
+      className="relative grid items-center gap-7 overflow-hidden border-b-8 border-[#102638] px-[5.2%] py-[34px] min-h-[255px] grid-cols-[1.18fr_0.72fr_1.25fr] max-[1350px]:grid-cols-[1.3fr_1fr] max-[950px]:grid-cols-[1fr] max-[950px]:gap-6 max-[600px]:flex max-[600px]:flex-col max-[600px]:items-stretch max-[600px]:gap-[22px] max-[600px]:px-[22px] max-[600px]:py-7"
       style={{
-        gridTemplateColumns: "1.18fr 0.72fr 1.25fr",
         background: `linear-gradient(90deg,#f8fbff 0%,#f8fbff 46%,rgba(248,251,255,0.84) 57%,rgba(248,251,255,0.02) 76%), url(${HERO_IMAGE})`,
         backgroundSize: "cover",
         backgroundPosition: "center right",
@@ -61,7 +60,7 @@ export default function FooterCta() {
           </span>
         </div>
         <h2
-          className="mb-4 font-display font-black leading-[1.03] tracking-[-1.8px] text-[#142b43] max-[600px]:text-[34px] max-[600px]:tracking-[-1px]"
+          className="mb-4 font-display font-black leading-[1.03] tracking-[-1.8px] text-[#142b43] max-[600px]:text-[26px] max-[600px]:tracking-[-0.5px]"
           style={{ fontSize: "clamp(32px,3vw,52px)" }}
         >
           HAVE A COMPLEX <span className="block text-[#0878f9]">ENGINEERING PROJECT?</span>

@@ -25,7 +25,7 @@ export default function PageHero({ index, eyebrow, title, copy, image, imageAlt,
       <div
         className={cn(
           "shell relative flex flex-col justify-end pb-12",
-          compact ? "min-h-[40vh] pt-36 lg:pb-14" : "min-h-[62vh] pt-40 lg:min-h-[68vh] lg:pb-16 lg:pt-52"
+          compact ? "min-h-[40vh] pt-28 lg:pb-14 lg:pt-36" : "min-h-[56vh] pt-28 lg:min-h-[68vh] lg:pb-16 lg:pt-52"
         )}
       >
         <SectionMeta index={index} tone="light">

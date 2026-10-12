@@ -14,10 +14,10 @@ const PHOTO_CLIP_MOBILE = "polygon(0 12%, 15% 0, 100% 0, 100% 100%, 0 100%)";
 
 export default function HeroStage() {
   return (
-    <section className="relative isolate min-h-[660px] overflow-hidden bg-[linear-gradient(90deg,#fbfdff_0%,#f8fbff_35%,#f8fbffef_45%,#f8fbff14_67%,transparent_100%)] max-[760px]:min-h-[850px] max-[760px]:bg-[linear-gradient(180deg,#fbfdff_0%,#fbfdff_48%,#fbfdff1a_76%)]">
+    <section className="relative isolate min-h-[660px] overflow-hidden bg-[linear-gradient(90deg,#fbfdff_0%,#f8fbff_35%,#f8fbffef_45%,#f8fbff14_67%,transparent_100%)] max-[760px]:min-h-[760px] max-[760px]:bg-[linear-gradient(180deg,#fbfdff_0%,#fbfdff_48%,#fbfdff1a_76%)]">
       {/* Photo */}
       <div
-        className="absolute z-0 bg-cover bg-center max-[760px]:top-[390px] max-[760px]:left-0 max-[760px]:right-0 max-[760px]:bottom-0 left-[43%] top-0 bottom-0 right-0"
+        className="absolute z-0 bg-cover bg-center max-[760px]:top-[350px] max-[760px]:left-0 max-[760px]:right-0 max-[760px]:bottom-0 left-[43%] top-0 bottom-0 right-0"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=88')",
@@ -27,7 +27,7 @@ export default function HeroStage() {
         aria-label="Infrastructure construction photography"
       />
       <div
-        className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[390px] max-[760px]:left-0"
+        className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0"
         style={{
           clipPath: PHOTO_CLIP,
           background:
@@ -36,7 +36,7 @@ export default function HeroStage() {
         aria-hidden="true"
       />
       <div
-        className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[390px] max-[760px]:left-0 max-[760px]:hidden"
+        className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0 max-[760px]:hidden"
         style={{
           clipPath: PHOTO_CLIP_MOBILE,
           background: "linear-gradient(180deg, #f7faff2e, #0816260f)",
@@ -58,7 +58,7 @@ export default function HeroStage() {
       />
 
       {/* Blueprint */}
-      <BlueprintOverlay className="pointer-events-none absolute left-[36%] top-[25px] z-10 h-[300px] w-[360px] opacity-[0.48] max-[760px]:left-[25%] max-[760px]:top-[270px] max-[760px]:h-[180px] max-[760px]:w-[240px]" />
+      <BlueprintOverlay className="pointer-events-none absolute left-[36%] top-[25px] z-10 h-[300px] w-[360px] opacity-[0.48] max-[760px]:left-[20%] max-[760px]:top-[240px] max-[760px]:h-[160px] max-[760px]:w-[220px]" />
 
       {/* Coords */}
       <div className="absolute left-[49%] top-[27%] z-20 text-[11px] font-bold leading-[1.7] tracking-[1px] text-[#243b55] max-[760px]:hidden">
@@ -83,7 +83,7 @@ export default function HeroStage() {
             STRUCTURAL ENGINEERING
           </span>
         </div>
-        <h1 className="m-0 max-w-[800px] text-[clamp(48px,5.6vw,88px)] font-black leading-[0.99] tracking-[-3.5px] text-[#0e2038] max-[1100px]:text-[clamp(46px,6.2vw,70px)] max-[760px]:text-[clamp(42px,12vw,66px)] max-[760px]:tracking-[-2px] max-[760px]:leading-[1.01]">
+        <h1 className="m-0 max-w-[800px] text-[clamp(48px,5.6vw,88px)] font-black leading-[0.99] tracking-[-3.5px] text-[#0e2038] max-[1100px]:text-[clamp(46px,6.2vw,70px)] max-[760px]:text-[clamp(34px,9vw,50px)] max-[760px]:tracking-[-1.5px] max-[760px]:leading-[1.02]">
           ENGINEERING
           <br />
           <span className="text-[#0878f9]">FOR COMPLEX</span>
@@ -100,7 +100,7 @@ export default function HeroStage() {
       </div>
 
       {/* Labels */}
-      <div className="absolute bottom-[118px] left-[41%] z-20 grid gap-[17px] text-[10px] font-bold leading-[1.35] tracking-[1.5px] text-[#263d57] max-[760px]:bottom-[100px] max-[760px]:left-[22px] max-[760px]:right-[22px] max-[760px]:flex max-[760px]:flex-wrap max-[760px]:gap-[7px]">
+      <div className="absolute bottom-[118px] left-[41%] z-20 grid gap-[17px] text-[10px] font-bold leading-[1.35] tracking-[1.5px] text-[#263d57] max-[760px]:bottom-[110px] max-[760px]:left-[22px] max-[760px]:right-[22px] max-[760px]:flex max-[760px]:flex-wrap max-[760px]:gap-[7px]">
         {LABELS.map((lines) => (
           <div
             key={lines[0]}

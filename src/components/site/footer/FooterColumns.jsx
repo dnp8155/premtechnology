@@ -62,9 +62,8 @@ export default function FooterColumns() {
 
   return (
     <footer
-      className="relative grid min-h-[325px] gap-0 overflow-hidden px-[5.2%] pb-[34px] pt-[38px] max-[1350px]:grid-cols-[1.45fr_0.68fr_1.1fr_1fr_1.1fr] max-[950px]:grid-cols-[1.3fr_1fr_1fr] max-[950px]:gap-x-0 max-[950px]:gap-y-8 max-[600px]:grid-cols-[1fr_1fr] max-[600px]:px-[22px] max-[600px]:py-7 max-[600px]:gap-y-7"
+      className="relative grid min-h-[325px] gap-0 overflow-hidden grid-cols-[1.65fr_0.7fr_1.22fr_1.05fr_1.12fr_0.72fr] px-[5.2%] pb-[34px] pt-[38px] max-[1350px]:grid-cols-[1.45fr_0.68fr_1.1fr_1fr_1.1fr] max-[950px]:grid-cols-[1.3fr_1fr_1fr] max-[950px]:gap-x-0 max-[950px]:gap-y-8 max-[600px]:grid-cols-[1fr_1fr] max-[600px]:px-[22px] max-[600px]:py-7 max-[600px]:gap-y-7"
       style={{
-        gridTemplateColumns: "1.65fr 0.7fr 1.22fr 1.05fr 1.12fr 0.72fr",
         backgroundColor: "#f9fafb",
         backgroundImage: `linear-gradient(rgba(249,250,251,0.6),rgba(249,250,251,0.6)),url(${BLUEPRINT})`,
         backgroundRepeat: "no-repeat",

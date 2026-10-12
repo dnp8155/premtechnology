@@ -43,7 +43,7 @@ export default function GlobalHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-[linear-gradient(105deg,#111c28,#101923_72%,#14283d)] text-white">
-      <div className="grid h-[86px] grid-cols-[300px_1fr_300px] items-center pl-[54px] max-[1100px]:grid-cols-[230px_1fr_235px] max-[1100px]:pl-[30px] max-[760px]:flex max-[760px]:h-[76px] max-[760px]:justify-between max-[760px]:px-[22px] max-[760px]:pl-0">
+      <div className="grid h-[86px] grid-cols-[300px_1fr_300px] items-center pl-[54px] max-[1100px]:grid-cols-[230px_1fr_235px] max-[1100px]:pl-[30px] max-[760px]:flex max-[760px]:h-[76px] max-[760px]:justify-between max-[760px]:px-[22px]">
         <Brand />
 
         <nav className="flex h-full items-center justify-center gap-[clamp(18px,3vw,48px)] text-sm text-[#e9eef6] max-[760px]:hidden">
