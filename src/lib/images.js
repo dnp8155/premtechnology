@@ -35,4 +35,12 @@ export const IMG = {
   tf06LoadCalc: `${BASE}6353bc5dd_generated_image.png`,
   tf07Review: `${BASE}c67c8de0e_generated_image.png`,
   tf08Cert: `${BASE}03e0bf9fc_generated_image.png`,
+  hc01Lrt: `${BASE}eeca05787_generated_image.png`,
+  hc02Metro: `${BASE}2dd59b8cf_generated_image.png`,
+  hc03Tunnels: `${BASE}d1639f0fc_generated_image.png`,
+  hc04Bridges: `${BASE}55be78bf8_generated_image.png`,
+  hc05Overpasses: `${BASE}fb9d94bc5_generated_image.png`,
+  hc06HeavyCivil: `${BASE}120cea87e_generated_image.png`,
+  hc07Water: `${BASE}4089d2b5b_generated_image.png`,
+  hc08Wastewater: `${BASE}f59190e48_generated_image.png`,
 };
