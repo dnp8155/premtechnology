@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
-import SectionMeta from "@/components/site/SectionMeta";
 import { IMG } from "@/lib/images";
 
 const ITEMS = [
@@ -27,14 +26,13 @@ export default function TransmissionFeature() {
   }, [paused]);
 
   return (
-    <section className="relative overflow-hidden bg-graphite text-white">
-      <div className="tech-grid-dark absolute inset-0 opacity-60" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-background">
       <div className="shell relative py-20 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left — carousel image */}
           <Reveal className="lg:col-span-5">
             <div
-              className="relative aspect-[3/4] overflow-hidden border border-white/10 lg:sticky lg:top-24"
+              className="relative aspect-[3/4] overflow-hidden border border-border"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
             >
@@ -50,31 +48,32 @@ export default function TransmissionFeature() {
                   }`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" aria-hidden="true" />
               <div className="absolute bottom-5 left-5 flex items-center gap-3">
-                <span className="label-mono text-white/50">{current.num}</span>
-                <span className="h-px w-8 bg-white/30" aria-hidden="true" />
-                <span className="label-text text-white/80">{current.label}</span>
+                <span className="label-mono text-brand">{current.num}</span>
+                <span className="h-px w-8 bg-ink/30" aria-hidden="true" />
+                <span className="label-text text-ink/80">{current.label}</span>
               </div>
             </div>
           </Reveal>
 
           {/* Right — heading + 8-item grid */}
           <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
-            <SectionMeta index="03" tone="light">
-              Transmission &amp; Power Structures
-            </SectionMeta>
-            <h2 className="display t-h1 mt-7 text-white">
+            <div className="flex items-center gap-3">
+              <span className="label-mono text-brand">01</span>
+              <span className="h-px w-8 bg-border" aria-hidden="true" />
+              <span className="label-text text-steel">Transmission &amp; Power Structures</span>
+            </div>
+            <h2 className="display t-h1 mt-7 text-ink">
               Structures that
               <br />
               carry the grid.
             </h2>
-            <p className="t-body mt-7 max-w-md leading-relaxed text-white/70">
+            <p className="t-body mt-7 max-w-md leading-relaxed text-steel">
               Engineering support for transmission towers, lattice girders and power infrastructure where structural
               performance, loading conditions and constructability are critical.
             </p>
 
-            <div className="mt-12 grid grid-cols-2 border-t border-white/15">
+            <div className="mt-12 grid grid-cols-2 border-t border-border">
               {ITEMS.map((item, i) => (
                 <button
                   key={item.num}
@@ -82,19 +81,19 @@ export default function TransmissionFeature() {
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}
-                  className={`group flex items-center gap-4 border-b border-white/10 py-5 pr-4 text-left transition-colors duration-300 ${
-                    i % 2 === 0 ? "border-r border-white/10" : ""
-                  } ${active === i ? "text-white" : "text-white/55 hover:text-white/80"}`}
+                  className={`group flex items-center gap-4 border-b border-border py-5 pr-4 text-left transition-colors duration-300 ${
+                    i % 2 === 0 ? "border-r border-border" : ""
+                  } ${active === i ? "text-ink" : "text-steel hover:text-ink"}`}
                 >
                   <span
-                    className={`label-mono transition-colors duration-300 ${active === i ? "text-brand" : "text-white/30"}`}
+                    className={`label-mono transition-colors duration-300 ${active === i ? "text-brand" : "text-steel/60"}`}
                   >
                     {item.num}
                   </span>
                   <span className="label-text">{item.label}</span>
                   <span
                     className={`ml-auto h-px transition-all duration-500 ease-out ${
-                      active === i ? "w-8 bg-brand" : "w-0 bg-white/30"
+                      active === i ? "w-8 bg-brand" : "w-0 bg-border"
                     }`}
                     aria-hidden="true"
                   />
