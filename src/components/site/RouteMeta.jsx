@@ -34,6 +34,16 @@ const PAGE_META = {
     description:
       "Contact Prem Technology Inc. about a structural engineering requirement, temporary works scope or infrastructure project, and our engineering team will review the opportunity.",
   },
+  "/insights": {
+    title: "Insights — Engineering Notes | Prem Technology Inc.",
+    description:
+      "Technical notes on structural engineering, temporary works, transmission structures and construction-phase practice from Prem Technology Inc.",
+  },
+  "/careers": {
+    title: "Careers — Join the Practice | Prem Technology Inc.",
+    description:
+      "Structural engineering careers at Prem Technology Inc. — work on transmission structures, temporary works and heavy civil infrastructure across Canada and the USA.",
+  },
   "/privacy": {
     title: "Privacy — Prem Technology Inc.",
     description:

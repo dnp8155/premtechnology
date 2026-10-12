@@ -13,6 +13,8 @@ const FOOTER_NAV = [
   { label: "Services", path: "/services" },
   { label: "Expertise", path: "/expertise" },
   { label: "Projects", path: "/projects" },
+  { label: "Insights", path: "/insights" },
+  { label: "Careers", path: "/careers" },
   { label: "Contact", path: "/contact" },
 ];
 

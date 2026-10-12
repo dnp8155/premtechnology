@@ -3,7 +3,8 @@ export const NAV = [
   { label: "Services", path: "/services", index: "02" },
   { label: "Expertise", path: "/expertise", index: "03" },
   { label: "Projects", path: "/projects", index: "04" },
-  { label: "Contact", path: "/contact", index: "05" },
+  { label: "Insights", path: "/insights", index: "05" },
+  { label: "Contact", path: "/contact", index: "06" },
 ];
 
 export const COMPANY = {

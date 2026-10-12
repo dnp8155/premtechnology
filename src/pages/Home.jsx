@@ -12,6 +12,7 @@ import TechnicalCapabilities from "@/components/home/TechnicalCapabilities";
 import WhyPrem from "@/components/home/WhyPrem";
 import WhoWeSupport from "@/components/home/WhoWeSupport";
 import ServicesCard from "@/components/home/ServicesCard";
+import InsightsTeaser from "@/components/home/InsightsTeaser";
 import CtaBand from "@/components/site/CtaBand";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyPrem />
       <WhoWeSupport />
       <ServicesCard />
+      <InsightsTeaser />
       <CtaBand
         eyebrow="Engagement"
         title="Let's engineer the next stage."

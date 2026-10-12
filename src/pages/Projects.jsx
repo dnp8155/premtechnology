@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import PageHero from "@/components/site/PageHero";
 import Reveal from "@/components/site/Reveal";
 import SectionMeta from "@/components/site/SectionMeta";
 import ProjectShowcase from "@/components/projects/ProjectShowcase";
+import ProjectFilters from "@/components/projects/ProjectFilters";
 import CtaBand from "@/components/site/CtaBand";
 import { APPLICATIONS } from "@/lib/content";
 
 const INDEX = APPLICATIONS.map((item) => [item.index, item.title, item.category]);
 
 export default function Projects() {
+  const [filter, setFilter] = useState("all");
+
+  const filtered =
+    filter === "all"
+      ? APPLICATIONS
+      : APPLICATIONS.filter((item) => item.category === filter);
+
   return (
     <>
       <PageHero
@@ -54,9 +62,19 @@ export default function Projects() {
 
       <section className="bg-background">
         <div className="shell pb-20 pt-12 lg:pb-28 lg:pt-16">
-          {APPLICATIONS.map((item, index) => (
-            <ProjectShowcase key={item.slug} item={item} alternate={index % 2 === 1} />
-          ))}
+          <div className="mb-10">
+            <ProjectFilters active={filter} onChange={setFilter} count={filtered.length} />
+          </div>
+          <div key={filter}>
+            {filtered.map((item, index) => (
+              <ProjectShowcase key={item.slug} item={item} alternate={index % 2 === 1} />
+            ))}
+            {filtered.length === 0 && (
+              <p className="py-16 text-center text-[15px] text-steel">
+                No applications in this category.
+              </p>
+            )}
+          </div>
         </div>
       </section>
 
