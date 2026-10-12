@@ -1,5 +1,5 @@
-import React from "react";
-import { Image } from "@/components/ui/image";
+import React, { useState } from "react";
+import AreaCarousel from "@/components/home/AreaCarousel";
 import Reveal from "@/components/site/Reveal";
 import SectionMeta from "@/components/site/SectionMeta";
 import { IMG } from "@/lib/images";
@@ -21,6 +21,7 @@ export const EXPERTISE_AREAS = [
       "Engineering review",
       "Certification support",
     ],
+    slides: [IMG.tf01Towers, IMG.tf02Lattice, IMG.tf03Girders, IMG.tf04Power, IMG.tf05Analysis, IMG.tf06LoadCalc, IMG.tf07Review, IMG.tf08Cert],
     image: IMG.expertiseTransmission,
     alt: "Lower leg section and concrete foundation of a steel transmission tower",
   },
@@ -39,6 +40,7 @@ export const EXPERTISE_AREAS = [
       "Construction engineering",
       "Site inspection",
     ],
+    slides: [IMG.tw01Shoring, IMG.tw02Formwork, IMG.tw03Falsework, IMG.tw04Scaffolding, IMG.tw05Excavation, IMG.tw06TempStructures, IMG.tw07ConstEng, IMG.tw08Inspection],
     image: IMG.expertiseTemporary,
     alt: "Deep excavation supported by steel soldier piles and ground anchors",
   },
@@ -57,12 +59,14 @@ export const EXPERTISE_AREAS = [
       "Water treatment",
       "Wastewater infrastructure",
     ],
+    slides: [IMG.hc01Lrt, IMG.hc02Metro, IMG.hc03Tunnels, IMG.hc04Bridges, IMG.hc05Overpasses, IMG.hc06HeavyCivil, IMG.hc07Water, IMG.hc08Wastewater],
     image: IMG.expertiseHeavyCivil,
     alt: "Concrete overpass bridge under construction with falsework support",
   },
 ];
 
 function AreaRow({ area, alternate }) {
+  const [active, setActive] = useState(0);
   return (
     <article className="border-t border-border py-12 lg:py-16">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
@@ -72,14 +76,7 @@ function AreaRow({ area, alternate }) {
             alternate ? "lg:col-span-5 lg:col-start-8" : "lg:col-span-5 lg:col-start-1"
           )}
         >
-          <div className="group relative aspect-[4/5] overflow-hidden">
-            <Image
-              src={area.image}
-              alt={area.alt}
-              fittingType="fill"
-              className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
-            />
-          </div>
+          <AreaCarousel area={area} active={active} setActive={setActive} />
         </Reveal>
 
         <Reveal
@@ -97,9 +94,27 @@ function AreaRow({ area, alternate }) {
 
           <ul className="mt-9 grid grid-cols-1 border-t border-border sm:grid-cols-2 sm:gap-x-8">
             {area.items.map((item, index) => (
-              <li key={item} className="flex items-baseline gap-4 border-b border-border py-3">
-                <span className="label-mono text-steel">{String(index + 1).padStart(2, "0")}</span>
-                <span className="t-body text-ink">{item}</span>
+              <li key={item} className="border-b border-border">
+                <button
+                  type="button"
+                  onClick={() => setActive(index)}
+                  onMouseEnter={() => setActive(index)}
+                  className="flex w-full items-baseline gap-4 py-3 text-left"
+                >
+                  <span className={cn("label-mono transition-colors", active === index ? "text-brand" : "text-steel")}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className={cn("t-body transition-colors", active === index ? "text-ink" : "text-steel")}>
+                    {item}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "ml-auto h-px self-center transition-all duration-500",
+                      active === index ? "w-8 bg-brand" : "w-0"
+                    )}
+                  />
+                </button>
               </li>
             ))}
           </ul>
