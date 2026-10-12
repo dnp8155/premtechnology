@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { IMG } from "@/lib/images";
 
-const HERO_IMAGE = IMG.appBridge;
+const HERO_IMAGE = IMG.footerCta;
 
 function CtaButton({ to, label, primary }) {
   return (

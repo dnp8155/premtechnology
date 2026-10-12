@@ -21,4 +21,10 @@ export const IMG = {
   civilStructures: `${BASE}7c4c90fee_generated_5236f6aa.png`,
   technicalReview: `${BASE}bbec0beff_generated_5ca52ecd.png`,
   footerBlueprint: `${BASE}8876f394c_BlueprintInfrastructureCityscape.png`,
+  heroTransmission: `${BASE}14fb65836_generated_image.png`,
+  heroTemporary: `${BASE}4559a4d60_generated_image.png`,
+  heroHeavyCivil: `${BASE}7dd6e992b_generated_image.png`,
+  heroBridges: `${BASE}d3b2f34c9_generated_image.png`,
+  footerCta: `${BASE}8fb6c4783_generated_image.png`,
+  footerSteelDetail: `${BASE}c2680cdc2_generated_image.png`,
 };

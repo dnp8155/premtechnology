@@ -31,8 +31,8 @@ export default function Services() {
           </>
         }
         copy="Four service groups covering the structural engineering, temporary works and infrastructure scopes our clients require."
-        image={IMG.constructionWide}
-        imageAlt="Heavy civil construction site with steel falsework and formwork erected"
+        image={IMG.heroCover}
+        imageAlt="Engineering infrastructure overview"
       />
 
       <section className="border-b border-border bg-background">

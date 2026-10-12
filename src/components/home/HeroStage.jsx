@@ -14,10 +14,10 @@ const PHOTO_CLIP = "polygon(13% 0, 100% 0, 100% 100%, 0 100%, 9% 80%, 0 66%, 11%
 const PHOTO_CLIP_MOBILE = "polygon(0 12%, 15% 0, 100% 0, 100% 100%, 0 100%)";
 
 const SLIDES = [
-  { img: IMG.expertiseTransmission, label: "01 — TRANSMISSION", alt: "Transmission structures" },
-  { img: IMG.expertiseTemporary, label: "02 — TEMPORARY WORKS", alt: "Temporary works" },
-  { img: IMG.expertiseHeavyCivil, label: "03 — HEAVY CIVIL", alt: "Heavy civil infrastructure" },
-  { img: IMG.appBridge, label: "04 — BRIDGES", alt: "Bridge infrastructure" },
+  { img: IMG.heroTransmission, label: "01 — TRANSMISSION", alt: "Transmission structures" },
+  { img: IMG.heroTemporary, label: "02 — TEMPORARY WORKS", alt: "Temporary works" },
+  { img: IMG.heroHeavyCivil, label: "03 — HEAVY CIVIL", alt: "Heavy civil infrastructure" },
+  { img: IMG.heroBridges, label: "04 — BRIDGES", alt: "Bridge infrastructure" },
 ];
 
 const SLIDE_INTERVAL = 3500;

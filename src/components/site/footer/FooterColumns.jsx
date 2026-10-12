@@ -197,8 +197,8 @@ export default function FooterColumns() {
         }}
       >
         <Image
-          src={IMG.steelDetail}
-          alt="Steel bridge structure and engineering details"
+          src={IMG.footerSteelDetail}
+          alt="Steel structural connection with bolts and welds"
           fittingType="fill"
           className="absolute inset-0 h-full w-full object-cover"
         />
