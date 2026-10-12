@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import BlueprintOverlay from "./BlueprintOverlay";
@@ -13,46 +13,49 @@ const LABELS = [
 const PHOTO_CLIP = "polygon(13% 0, 100% 0, 100% 100%, 0 100%, 9% 80%, 0 66%, 11% 47%, 2% 31%)";
 const PHOTO_CLIP_MOBILE = "polygon(0 12%, 15% 0, 100% 0, 100% 100%, 0 100%)";
 
+const SLIDES = [
+  { img: IMG.expertiseTransmission, label: "01 — TRANSMISSION", alt: "Transmission structures" },
+  { img: IMG.expertiseTemporary, label: "02 — TEMPORARY WORKS", alt: "Temporary works" },
+  { img: IMG.expertiseHeavyCivil, label: "03 — HEAVY CIVIL", alt: "Heavy civil infrastructure" },
+  { img: IMG.appBridge, label: "04 — BRIDGES", alt: "Bridge infrastructure" },
+];
+
+const SLIDE_INTERVAL = 3500;
+
 export default function HeroStage() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((prev) => (prev + 1) % SLIDES.length);
+    }, SLIDE_INTERVAL);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative isolate min-h-[660px] overflow-hidden bg-[linear-gradient(90deg,#fbfdff_0%,#f8fbff_35%,#f8fbffef_45%,#f8fbff14_67%,transparent_100%)] max-[760px]:min-h-[760px] max-[760px]:bg-[linear-gradient(180deg,#fbfdff_0%,#fbfdff_48%,#fbfdff1a_76%)]">
-      {/* Photo gallery — 3 stacked editorial photos */}
+      {/* Auto-carousel photo */}
       <div
         className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0 max-[760px]:right-0 max-[760px]:bottom-0"
         style={{ clipPath: PHOTO_CLIP }}
       >
-        <div className="flex h-full w-full flex-col gap-[3px]">
+        {SLIDES.map((slide, i) => (
           <div
-            className="relative flex-1 bg-cover bg-center"
-            style={{ backgroundImage: `url('${IMG.expertiseTransmission}')` }}
+            key={slide.label}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('${slide.img}')`,
+              opacity: i === active ? 1 : 0,
+              transition: "opacity 900ms cubic-bezier(0.22, 1, 0.36, 1)",
+            }}
             role="img"
-            aria-label="Transmission structures"
+            aria-label={slide.alt}
           >
-            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
-              01 — TRANSMISSION
+            <span className="absolute bottom-3 left-4 z-10 font-mono text-[10px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_6px_#000]">
+              {slide.label}
             </span>
           </div>
-          <div
-            className="relative flex-1 bg-cover bg-center"
-            style={{ backgroundImage: `url('${IMG.expertiseTemporary}')` }}
-            role="img"
-            aria-label="Temporary works"
-          >
-            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
-              02 — TEMPORARY WORKS
-            </span>
-          </div>
-          <div
-            className="relative flex-1 bg-cover bg-center"
-            style={{ backgroundImage: `url('${IMG.expertiseHeavyCivil}')` }}
-            role="img"
-            aria-label="Heavy civil infrastructure"
-          >
-            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
-              03 — HEAVY CIVIL
-            </span>
-          </div>
-        </div>
+        ))}
       </div>
       <div
         className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0"
@@ -154,12 +157,21 @@ export default function HeroStage() {
         </Link>
       </div>
 
-      {/* Index dots */}
+      {/* Index dots — wired to active slide */}
       <div className="absolute bottom-6 right-11 z-30 flex gap-[7px] rounded-3xl border border-white/35 bg-[#0c1c2ac7] px-4 py-[11px] max-[760px]:bottom-[18px] max-[760px]:right-3 max-[760px]:px-3 max-[760px]:py-[9px]">
-        <span className="h-[7px] w-[22px] rounded-lg bg-white" />
-        <span className="h-[7px] w-[7px] rounded-full bg-white/50" />
-        <span className="h-[7px] w-[7px] rounded-full bg-white/50" />
-        <span className="h-[7px] w-[7px] rounded-full bg-white/50" />
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => setActive(i)}
+            className={
+              i === active
+                ? "h-[7px] w-[22px] rounded-lg bg-white transition-all duration-300"
+                : "h-[7px] w-[7px] rounded-full bg-white/50 transition-all duration-300 hover:bg-white/80"
+            }
+          />
+        ))}
       </div>
     </section>
   );
