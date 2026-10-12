@@ -27,4 +27,12 @@ export const IMG = {
   heroBridges: `${BASE}d3b2f34c9_generated_image.png`,
   footerCta: `${BASE}8fb6c4783_generated_image.png`,
   footerSteelDetail: `${BASE}c2680cdc2_generated_image.png`,
+  tf01Towers: `${BASE}91c36d98e_generated_image.png`,
+  tf02Lattice: `${BASE}3fb61292f_generated_image.png`,
+  tf03Girders: `${BASE}1d2ac420a_generated_image.png`,
+  tf04Power: `${BASE}88dd70479_generated_image.png`,
+  tf05Analysis: `${BASE}afbadc759_generated_image.png`,
+  tf06LoadCalc: `${BASE}6353bc5dd_generated_image.png`,
+  tf07Review: `${BASE}c67c8de0e_generated_image.png`,
+  tf08Cert: `${BASE}03e0bf9fc_generated_image.png`,
 };
