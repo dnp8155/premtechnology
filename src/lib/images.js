@@ -43,4 +43,12 @@ export const IMG = {
   hc06HeavyCivil: `${BASE}120cea87e_generated_image.png`,
   hc07Water: `${BASE}4089d2b5b_generated_image.png`,
   hc08Wastewater: `${BASE}f59190e48_generated_image.png`,
+  tw01Shoring: `${BASE}bff47391d_generated_image.png`,
+  tw02Formwork: `${BASE}be4399750_generated_image.png`,
+  tw03Falsework: `${BASE}93d969994_generated_image.png`,
+  tw04Scaffolding: `${BASE}6ed53f90b_generated_image.png`,
+  tw05Excavation: `${BASE}e0659546d_generated_image.png`,
+  tw06TempStructures: `${BASE}0c27ad90b_generated_image.png`,
+  tw07ConstEng: `${BASE}a7dfc8282_generated_image.png`,
+  tw08Inspection: `${BASE}2f251d949_generated_image.png`,
 };
