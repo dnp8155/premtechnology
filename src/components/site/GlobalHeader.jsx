@@ -86,22 +86,23 @@ export default function GlobalHeader() {
       </div>
 
       {open && (
-        <nav className="absolute left-0 right-0 top-[76px] z-10 flex flex-col items-start gap-0 bg-[#111c28] px-[22px] py-[18px] shadow-[0_12px_24px_#0003] max-[760px]:flex lg:hidden">
+        <nav className="fixed inset-0 top-[76px] z-[55] flex flex-col overflow-y-auto bg-[#111c28] px-[22px] pb-8 pt-2 lg:hidden">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
-              className="flex w-full items-center py-3 text-white"
+              className="flex w-full items-center border-b border-white/10 py-4 text-[17px] text-white"
             >
               {item.label}
-              {item.chevron && <ChevronDown size={12} className="ml-2" />}
+              {item.chevron && <ChevronDown size={14} className="ml-2" strokeWidth={2.5} />}
             </NavLink>
           ))}
           <Link
             to="/contact"
-            className="mt-3 w-full bg-[#0878f9] py-3 text-center text-sm font-semibold text-white rounded-bl-[30px]"
+            className="mt-5 flex w-full items-center justify-center gap-2 bg-[#0878f9] py-4 text-sm font-semibold text-white rounded-bl-[30px]"
           >
             Discuss Your Project
+            <ArrowUpRight size={18} strokeWidth={2} />
           </Link>
         </nav>
       )}
