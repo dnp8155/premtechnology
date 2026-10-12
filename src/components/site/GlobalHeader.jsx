@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "Expertise", path: "/expertise", chevron: true },
   { label: "Projects", path: "/projects" },
   { label: "Insights", path: "/insights" },
+  { label: "Careers", path: "/careers" },
   { label: "Contact", path: "/contact" },
 ];
 
