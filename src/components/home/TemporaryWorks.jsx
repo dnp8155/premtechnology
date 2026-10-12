@@ -37,16 +37,20 @@ export default function TemporaryWorks() {
               onMouseLeave={() => setPaused(false)}
             >
               {ITEMS.map((item, i) => (
-                <Image
+                <div
                   key={item.num}
-                  src={item.img}
-                  alt={item.alt}
-                  fittingType="fill"
-                  loading={i === 0 ? "eager" : "lazy"}
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out ${
+                  className={`absolute inset-0 transition-opacity duration-700 ease-out ${
                     i === active ? "opacity-100" : "opacity-0"
                   }`}
-                />
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.alt}
+                    fittingType="fill"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               ))}
               <div className="absolute bottom-5 left-5 flex items-center gap-3">
                 <span className="label-mono text-brand">{current.num}</span>
