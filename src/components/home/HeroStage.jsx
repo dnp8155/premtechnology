@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import BlueprintOverlay from "./BlueprintOverlay";
+import { IMG } from "@/lib/images";
 
 const LABELS = [
   ["TRANSMISSION", "STRUCTURES"],
@@ -15,17 +16,44 @@ const PHOTO_CLIP_MOBILE = "polygon(0 12%, 15% 0, 100% 0, 100% 100%, 0 100%)";
 export default function HeroStage() {
   return (
     <section className="relative isolate min-h-[660px] overflow-hidden bg-[linear-gradient(90deg,#fbfdff_0%,#f8fbff_35%,#f8fbffef_45%,#f8fbff14_67%,transparent_100%)] max-[760px]:min-h-[760px] max-[760px]:bg-[linear-gradient(180deg,#fbfdff_0%,#fbfdff_48%,#fbfdff1a_76%)]">
-      {/* Photo */}
+      {/* Photo gallery — 3 stacked editorial photos */}
       <div
-        className="absolute z-0 bg-cover bg-center max-[760px]:top-[350px] max-[760px]:left-0 max-[760px]:right-0 max-[760px]:bottom-0 left-[43%] top-0 bottom-0 right-0"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=88')",
-          clipPath: PHOTO_CLIP,
-        }}
-        role="img"
-        aria-label="Infrastructure construction photography"
-      />
+        className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0 max-[760px]:right-0 max-[760px]:bottom-0"
+        style={{ clipPath: PHOTO_CLIP }}
+      >
+        <div className="flex h-full w-full flex-col gap-[3px]">
+          <div
+            className="relative flex-1 bg-cover bg-center"
+            style={{ backgroundImage: `url('${IMG.expertiseTransmission}')` }}
+            role="img"
+            aria-label="Transmission structures"
+          >
+            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
+              01 — TRANSMISSION
+            </span>
+          </div>
+          <div
+            className="relative flex-1 bg-cover bg-center"
+            style={{ backgroundImage: `url('${IMG.expertiseTemporary}')` }}
+            role="img"
+            aria-label="Temporary works"
+          >
+            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
+              02 — TEMPORARY WORKS
+            </span>
+          </div>
+          <div
+            className="relative flex-1 bg-cover bg-center"
+            style={{ backgroundImage: `url('${IMG.expertiseHeavyCivil}')` }}
+            role="img"
+            aria-label="Heavy civil infrastructure"
+          >
+            <span className="absolute bottom-2 left-3 z-10 font-mono text-[9px] font-bold tracking-[1.5px] text-white [text-shadow:0_1px_4px_#000]">
+              03 — HEAVY CIVIL
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         className="absolute z-0 left-[43%] top-0 bottom-0 right-0 max-[760px]:top-[350px] max-[760px]:left-0"
         style={{
