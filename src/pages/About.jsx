@@ -2,6 +2,7 @@ import React from "react";
 import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 import PageHero from "@/components/site/PageHero";
+import RegistrationStrip from "@/components/site/RegistrationStrip";
 import SectionMeta from "@/components/site/SectionMeta";
 import CtaBand from "@/components/site/CtaBand";
 import { IMG } from "@/lib/images";
@@ -49,6 +50,8 @@ export default function About() {
         imageAlt="Structural engineering drawings, calculation sheets and a bolted steel connection model"
         tags={["Structural Engineering", "Temporary Works", "Transmission Structures", "Heavy Civil"]}
       />
+
+      <RegistrationStrip />
 
       <section className="border-b border-border bg-background">
         <div className="shell py-20 lg:py-28">

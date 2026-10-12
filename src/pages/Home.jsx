@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "@/components/home/Hero";
+import RegistrationStrip from "@/components/site/RegistrationStrip";
 import ComplexityIntro from "@/components/home/ComplexityIntro";
 import CoreExpertise from "@/components/home/CoreExpertise";
 import TransmissionFeature from "@/components/home/TransmissionFeature";
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <RegistrationStrip />
       <ComplexityIntro />
       <CoreExpertise />
       <TransmissionFeature />
