@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import GlobalHeader from "./GlobalHeader";
 import Footer from "./Footer";
-import FloatingCta from "./FloatingCta";
+
 import RouteMeta from "./RouteMeta";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -35,7 +35,6 @@ export default function SiteLayout() {
         </AnimatePresence>
       </main>
       <Footer />
-      <FloatingCta />
     </div>
   );
 }
