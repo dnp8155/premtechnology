@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 import SectionMeta from "@/components/site/SectionMeta";
@@ -17,7 +17,14 @@ const ITEMS = [
 
 export default function TransmissionFeature() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const current = ITEMS[active];
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setActive((p) => (p + 1) % ITEMS.length), 3000);
+    return () => clearInterval(id);
+  }, [paused]);
 
   return (
     <section className="relative overflow-hidden bg-graphite text-white">
@@ -26,7 +33,11 @@ export default function TransmissionFeature() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left — carousel image */}
           <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[3/4] overflow-hidden border border-white/10 lg:sticky lg:top-24">
+            <div
+              className="relative aspect-[3/4] overflow-hidden border border-white/10 lg:sticky lg:top-24"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
               {ITEMS.map((item, i) => (
                 <Image
                   key={item.num}
