@@ -42,23 +42,25 @@ export default function GlobalHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-[linear-gradient(105deg,#111c28,#101923_72%,#14283d)] text-white">
-      <div className="grid h-[86px] grid-cols-[300px_1fr_300px] items-center pl-[54px] max-[1100px]:grid-cols-[230px_1fr_235px] max-[1100px]:pl-[30px] max-[760px]:flex max-[760px]:h-[76px] max-[760px]:justify-between max-[760px]:px-[22px]">
-        <Brand />
+    <header className="sticky top-0 z-50 bg-[linear-gradient(105deg,#111c28,#101923_72%,#14283d)] text-white shadow-md">
+      <div className="flex h-[86px] w-full items-center justify-between pl-6 sm:pl-8 lg:pl-10 pr-0 max-[1024px]:h-[76px] max-[1024px]:px-5">
+        <div className="flex-shrink-0">
+          <Brand />
+        </div>
 
-        <nav className="flex h-full items-center justify-center gap-[clamp(18px,3vw,48px)] text-sm text-[#e9eef6] max-[760px]:hidden">
+        <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 xl:gap-4 2xl:gap-6 px-3 text-[13px] xl:text-[14px] text-[#e9eef6]">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
-              className="relative flex h-full items-center whitespace-nowrap transition-colors hover:text-white"
+              className="relative flex h-[86px] items-center px-1.5 whitespace-nowrap transition-colors hover:text-white"
             >
               {({ isActive }) => (
                 <>
                   <span>{item.label}</span>
-                  {item.chevron && <ChevronDown size={12} className="ml-2" strokeWidth={2.5} />}
+                  {item.chevron && <ChevronDown size={11} className="ml-1 opacity-75" strokeWidth={2.5} />}
                   {isActive && (
-                    <span className="absolute bottom-[17px] left-0 right-0 h-[3px] rounded-[3px] bg-[#0878f9]" />
+                    <span className="absolute bottom-[20px] left-1.5 right-1.5 h-[3px] rounded-[3px] bg-[#0878f9]" />
                   )}
                 </>
               )}
@@ -66,27 +68,29 @@ export default function GlobalHeader() {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
-          className="flex h-full items-center justify-between whitespace-nowrap bg-[#0878f9] pl-[42px] pr-[28px] text-sm font-[650] text-white rounded-bl-[42px] max-[1100px]:pl-[25px] max-[1100px]:pr-[18px] max-[1100px]:text-xs max-[760px]:hidden"
-        >
-          <span>Discuss Your Project</span>
-          <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/80">
-            <ArrowUpRight size={20} strokeWidth={2} />
-          </span>
-        </Link>
+        <div className="flex items-center flex-shrink-0 h-full">
+          <Link
+            to="/contact"
+            className="group hidden lg:flex h-full items-center gap-3 xl:gap-4 whitespace-nowrap bg-[#0878f9] hover:bg-[#076ee4] transition-colors pl-6 pr-5 xl:pl-9 xl:pr-7 text-xs xl:text-sm font-[650] text-white rounded-bl-[42px]"
+          >
+            <span>Discuss Your Project</span>
+            <span className="flex h-8 w-8 xl:h-10 xl:w-10 flex-shrink-0 items-center justify-center rounded-full border border-white/80 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <ArrowUpRight size={18} strokeWidth={2.2} />
+            </span>
+          </Link>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="hidden h-10 w-10 items-center justify-center text-white max-[760px]:flex"
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="hidden max-[1024px]:flex h-10 w-10 items-center justify-center text-white"
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <nav className="fixed inset-0 top-[76px] z-[55] flex flex-col overflow-y-auto bg-[#111c28] px-[22px] pb-8 pt-2 lg:hidden">
+        <nav className="fixed inset-0 top-[76px] z-[55] flex flex-col overflow-y-auto bg-[#111c28] px-6 pb-8 pt-2">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.path}
